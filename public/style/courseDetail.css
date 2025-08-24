@@ -1,0 +1,181 @@
+.course-detail .back-link {
+  color: var(--muted);
+  text-decoration: none;
+}
+.course-detail .back-link:hover {
+  color: var(--ink);
+}
+
+.course-detail .badge-level {
+  display: inline-block;
+  background: #eef2ff;
+  color: #1f2a5c;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-size: 0.82rem;
+  box-shadow: 0 8px 18px rgba(59, 130, 246, 0.12);
+}
+
+.course-detail .title {
+  font-weight: 800;
+  font-size: clamp(1.8rem, 3.2vw + 0.5rem, 44px);
+}
+
+.course-detail .subtitle {
+  color: var(--muted);
+}
+
+.author-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: #e2e8f0;
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.author-line .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: #e2e8f0;
+}
+
+.learn-card {
+  background: #fff;
+  border: 1px solid #eef2f7;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+.learn-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #0f172a;
+}
+.learn-item i {
+  color: #22c55e;
+}
+
+.detail-accordion .accordion-item {
+  border: 0;
+  margin-bottom: 12px;
+}
+.detail-accordion .accordion-button {
+  background: #fff;
+  border: 1px solid #dfe7f1;
+  border-radius: 12px !important;
+  font-weight: 600;
+  box-shadow: none;
+  padding: 0.9rem 1rem;
+}
+.detail-accordion .accordion-button:not(.collapsed) {
+  border-color: #0f172a;
+  box-shadow: none;
+  color: #0f172a;
+}
+.detail-accordion .accordion-collapse {
+  border: 0;
+}
+.detail-accordion .accordion-body {
+  padding: 0.75rem 1rem 1rem;
+}
+.detail-accordion .lesson {
+  color: #475569;
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.sidebar-card {
+  background: #fff;
+  border: 1px solid #eef2f7;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+  position: sticky;
+  top: 84px;
+}
+.sidebar-hero img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+}
+
+.price-tag {
+  font-weight: 800;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.btn-enroll {
+  --bs-btn-color: #fff;
+  --bs-btn-bg: #eb7a2f;
+  --bs-btn-border-color: #eb7a2f;
+  --bs-btn-hover-bg: #e26814;
+  --bs-btn-hover-border-color: #e26814;
+  --bs-btn-focus-shadow-rgb: 235, 122, 47;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  font-weight: 700;
+  box-shadow: 0 10px 22px rgba(235, 122, 47, 0.25);
+}
+
+.sidebar-meta .label {
+  font-weight: 700;
+  color: #0f172a;
+}
+.sidebar-meta ul li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--muted);
+  margin-bottom: 0.6rem;
+}
+.sidebar-meta ul li:last-child {
+  margin-bottom: 0;
+}
+.stars .star {
+  color: #f59e0b;
+  stroke: currentColor;
+  opacity: 0.7;
+}
+.stars .star.filled {
+  fill: currentColor;
+  opacity: 1;
+}
+
+.author-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 9999px;
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  color: #1f2937;
+  background: #fde68a;
+}
+
+.reviews-list .review:first-child {
+  border-top: 0 !important;
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+.progress {
+  background-color: #e5e7eb;
+}
+.progress-bar {
+  background-color: #10b981;
+}
+
+@media (max-width: 991.98px) {
+  .sidebar-card {
+    top: 0;
+  }
+}

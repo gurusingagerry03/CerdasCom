@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detail</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script defer src="https://unpkg.com/feather-icons"></script>
+
+  <link rel="stylesheet" href="/style/home.css" />
+  <link rel="stylesheet" href="/style/courseDetail.css" />
+</head>
+
+<body>
+  <%- include('partial/_nav') %>
+
+  <main class="course-detail py-4 py-lg-5">
+    <div class="container">
+      <a href="/course" class="back-link d-inline-flex align-items-center mb-3">
+        <i data-feather="arrow-left" width="18" class="me-2"></i>
+        Back to courses
+      </a>
+
+      <div class="row g-4 g-xl-5">
+        <div class="col-lg-8">
+          <span class="badge-level"><%= course.level %></span>
+          <h1 class="title mt-2"><%= course.title %></h1>
+          <p class="subtitle mb-3 mb-lg-4">
+            <%= course.description %>
+          </p>
+
+          <div class="author-line d-flex align-items-center gap-3 mb-4">
+            <div class="author-avatar"><%= course.Instructor.User.full_name[0] %></div>
+            <div class="text-muted small fw-medium"><%= course.Instructor.User.full_name %></div>
+            <div class="dot"></div>
+            <div class="text-muted small d-inline-flex align-items-center gap-1">
+              <i data-feather="star" width="16"></i>
+              <span class="fw-semibold"><%= course.avg_rating %></span>
+              <span>(<%= ratings.length %> ratings)</span>
+            </div>
+            <div class="dot"></div>
+            <div class="text-muted small d-inline-flex align-items-center gap-1">
+              <i data-feather="activity" width="16"></i>
+              <%= course.level %>
+            </div>
+          </div>
+
+          <h4 class="fw-bold mb-3">Course Content</h4>
+          <div class="accordion detail-accordion" id="courseAccordion">
+            <% course.Lessons.forEach((element, i) => { %>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="h<%= i %>">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#c<%= i %>" aria-expanded="false" aria-controls="c<%= i %>">
+                  Section <%= element.section_order %>: <%= element.section_title  %>
+                </button>
+              </h2>
+              <div id="c<%= i %>" class="accordion-collapse collapse" aria-labelledby="h<%= i %>" data-bs-parent="#courseAccordion">
+                <div class="accordion-body">
+                  <div class="lesson">
+                    <i data-feather="play-circle" width="18"></i>
+                    <%= element.title %>. Duration: <%= element.duration %> minute
+                  </div>
+                </div>
+              </div>
+            </div>
+            <% }) %>
+          </div>
+
+        </div>
+        <aside class="col-lg-4">
+          <div class="sidebar-card">
+            <div class="sidebar-hero">
+              <img src="<%= course.image %>" alt="Course cover" />
+            </div>
+
+            <div class="p-3 p-lg-4">
+              <div class="price-tag"><%= formatPrice(course.price) %></div>
+              <button class="btn btn-enroll w-100 mb-3">Enroll Now</button>
+
+              <div class="sidebar-meta">
+                <div class="label">This course includes:</div>
+                <ul class="list-unstyled mt-2 mb-0">
+                  <li>
+                    <i data-feather="book-open" width="18"></i>
+                    <%= totalLesson %> modules
+                  </li>
+                  <li>
+                    <i data-feather="clock" width="18"></i>
+                    <%= course.time %>
+                  </li>
+                  <li>
+                    <i data-feather="award" width="18"></i>
+                    Certificate of Completion
+                  </li>
+                  <li>
+                    <i data-feather="infinity" width="18"></i>
+                    Lifetime Access
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </aside>
+        <h4 class="fw-bold mb-3 mt-4">Student Reviews</h4>
+
+        <div class="learn-card p-4 p-lg-4 mb-4 mb-lg-5">
+          <div class="d-flex flex-wrap align-items-center justify-content-between gap-3 mb-3">
+            <div class="d-flex align-items-center gap-2">
+              <i data-feather="star" class="star filled" width="20"></i>
+              <span class="fw-bold"><%= course.avg_rating %></span>
+              <span class="text-muted">(<%= ratings.length %> ratings)</span>
+            </div>
+          </div>
+
+          <div class="mb-4">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <span class="small text-muted" style="width:24px">5</span>
+              <div class="progress flex-grow-1" style="height:8px;">
+                <div class="progress-bar" style="width: <%= percentRating['5'] %>%"></div>
+              </div>
+            </div>
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <span class="small text-muted" style="width:24px">4</span>
+              <div class="progress flex-grow-1" style="height:8px;">
+                <div class="progress-bar" style="width: <%= percentRating['4'] %>%"></div>
+              </div>
+            </div>
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <span class="small text-muted" style="width:24px">3</span>
+              <div class="progress flex-grow-1" style="height:8px;">
+                <div class="progress-bar" style="width: <%= percentRating['3'] %>%"></div>
+              </div>
+            </div>
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <span class="small text-muted" style="width:24px">2</span>
+              <div class="progress flex-grow-1" style="height:8px;">
+                <div class="progress-bar" style="width: <%= percentRating['2'] %>%"></div>
+              </div>
+            </div>
+            <div class="d-flex align-items-center gap-2">
+              <span class="small text-muted" style="width:24px">1</span>
+              <div class="progress flex-grow-1" style="height:8px;">
+                <div class="progress-bar" style="width: <%= percentRating['1'] %>%"></div>
+              </div>
+            </div>
+          </div>
+          <div class="reviews-list">
+            <% ratings.forEach(element => { %>
+            <div class="review border-top pt-3 mt-3">
+              <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+                <div class="d-flex align-items-center gap-3">
+                  <div class="author-avatar"><%= element.User.full_name[0]  %></div>
+                  <div>
+                    <div class="fw-semibold"><%= element.User.full_name  %></div>
+                    <div class="text-muted small"><%= formatDate(element.Review.createdAt) %></div>
+                  </div>
+                </div>
+                <div class="stars">
+                  <% for( let i = 1; i <=5; i++ ) { %>
+                  <% if (i<=element.Review.rating) { %>
+                  <i data-feather="star" class="star filled" width="16"></i>
+                  <% }else {%>
+                  <i data-feather="star" class="star" width="16"></i>
+                  <% } %>
+                  <% } %>
+                </div>
+              </div>
+              <p class="mt-2 mb-0"><%= element.Review.comment  %></p>
+            </div>
+            <% }) %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+  <%- include('partial/_footer') %>
+</body>
+
+</html>

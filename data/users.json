@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "username": "alice",
+    "email": "alice@example.com",
+    "password": "hash1",
+    "full_name": "Alice Pratama",
+    "role": "student"
+  },
+  {
+    "id": 2,
+    "username": "bob",
+    "email": "bob@example.com",
+    "password": "hash2",
+    "full_name": "Bob Santoso",
+    "role": "student"
+  },
+  {
+    "id": 3,
+    "username": "carol",
+    "email": "carol@example.com",
+    "password": "hash3",
+    "full_name": "Carol Dewi",
+    "role": "student"
+  },
+  {
+    "id": 4,
+    "username": "dave",
+    "email": "dave@example.com",
+    "password": "hash4",
+    "full_name": "Dave Putra",
+    "role": "student"
+  },
+  {
+    "id": 5,
+    "username": "erin",
+    "email": "erin@example.com",
+    "password": "hash5",
+    "full_name": "Erin Puspita",
+    "role": "student"
+  },
+  {
+    "id": 6,
+    "username": "frank",
+    "email": "frank@example.com",
+    "password": "hash6",
+    "full_name": "Frank Wijaya",
+    "role": "student"
+  },
+  {
+    "id": 7,
+    "username": "greg",
+    "email": "greg@example.com",
+    "password": "hash7",
+    "full_name": "Gregory Halim",
+    "role": "instructor"
+  },
+  {
+    "id": 8,
+    "username": "hannah",
+    "email": "hannah@example.com",
+    "password": "hash8",
+    "full_name": "Hannah Siregar",
+    "role": "instructor"
+  },
+  {
+    "id": 9,
+    "username": "ivan",
+    "email": "ivan@example.com",
+    "password": "hash9",
+    "full_name": "Ivan Prakoso",
+    "role": "instructor"
+  }
+]

@@ -1,0 +1,56 @@
+<nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+  <div class="container py-2">
+    <a class="navbar-brand d-flex align-items-center gap-2" href="/">
+      <span class="brand-mark d-inline-flex align-items-center justify-content-center rounded">
+        <i data-feather="book-open" class="text-white" width="18" height="18"></i>
+      </span>
+      <span class="fw-semibold">CerdasCom</span>
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link <%= page==='home'?'active':'' %>" href="/">Home</a></li>
+        <li class="nav-item"><a class="nav-link <%= page==='course'?'active':'' %>" href="/course">Courses</a></li>
+        <li class="nav-item"><a class="nav-link <%= page==='category'?'active':'' %>" href="/category">Categories</a></li>
+      </ul>
+
+
+      <div class="d-flex align-items-center gap-2">
+        <% if (!user) { %>
+        <div class="guest-only d-flex gap-2">
+          <a class="btn btn-outline-secondary" href="/login">Login</a>
+          <a class="btn btn-primary" href="/register">Register</a>
+        </div>
+
+        <% } %>
+        <% if (user) { %>
+        <div class="dropdown user-only">
+          <button class="btn btn-light d-flex align-items-center gap-2" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="avatar d-inline-flex align-items-center justify-content-center rounded-circle">
+              <i data-feather="user"></i>
+            </span>
+            <span id="navName" class="fw-semibold d-lg-inline"><%= user.firstName %></span>
+          </button>
+          <ul class="dropdown-menu dropdown-menu-end">
+            <li><a class="dropdown-item" href="/myCourse/<%= user.id %>">My Course</a></li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li>
+              <a href="/logout">
+                <button class="dropdown-item" id="btnLogout" type="button">Log out</button>
+              </a>
+            </li>
+
+          </ul>
+        </div>
+
+        <% } %>
+      </div>
+    </div>
+  </div>
+</nav>

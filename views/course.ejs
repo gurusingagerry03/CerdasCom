@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Course Catalog</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script defer src="https://unpkg.com/feather-icons"></script>
+  <link rel="stylesheet" href="/style/home.css" />
+  <link rel="stylesheet" href="/style/course.css" />
+</head>
+
+<body>
+  <%- include('partial/_nav') %>
+
+  <main class="catalog py-5">
+    <div class="container">
+      <header class="text-center mb-4 mb-lg-5">
+        <h1 class="catalog-title">Course Catalog</h1>
+        <p class="text-secondary mt-2">
+          Find the perfect course to kickstart your learning journey.
+        </p>
+      </header>
+      <div class="control-bar row g-3 g-md-4 mb-4">
+        <div class="col-12 col-lg-4">
+          <form class="searchbox input-group w-100" method="GET" action="/course">
+            <span class="input-group-text bg-white border-0">
+              <i data-feather="search" width="18"></i>
+            </span>
+            <input type="text" name="search" class="form-control border-0" placeholder="Search courses..." value="<%= search ? search : '' %>">
+            <% if (sort) { %>
+            <input type="hidden" name="sort" value="<%= sort %>">
+            <% } %>
+            <% if (category) { %>
+            <input type="hidden" name="category" value="<%= category %>">
+            <% } %>
+          </form>
+
+        </div>
+        <div class="col-12 col-lg-4 ms-lg-auto">
+          <div class="dropdown w-100">
+            <button class="btn control-pill w-100 dropdown-toggle d-flex align-items-center justify-content-between no-caret" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <span>Sort by: <%= sort ? sort.toUpperCase():'POPULAR' %></span>
+              <i data-feather="chevron-down" width="16"></i>
+            </button>
+            <% let urlSearch = search ? `&search=${search}` : ''  %>
+            <% let urlCategory = category ? `&category=${category}` : ''  %>
+            <ul class="dropdown-menu dropdown-menu-end shadow-sm w-100">
+              <li><a class="dropdown-item <%= sort ==='popular'?'active':'' %> <%= !sort?'active':'' %>" href="/course/?sort=popular<%= urlSearch %><%= urlCategory %>">Popular</a></li>
+              <li><a class="dropdown-item <%= sort==='price'?'active':'' %> " href="/course/?sort=price<%= urlSearch %><%= urlCategory %>">Price</a></li>
+              <li><a class="dropdown-item <%= sort==='rating'?'active':'' %> " href="/course/?sort=rating<%= urlSearch %><%= urlCategory %>">Rating</a></li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="row g-4">
+        <% course.forEach(el => { %>
+        <div class="col-12 col-md-6 col-xl-3">
+          <article class="course-card h-100">
+            <div class="thumb" style="background-image:url('<%= el.image %>');background-size:cover;background-position:center;">
+              <span class="level-badge"><%= el.level %></span>
+            </div>
+            <div class="p-3 p-xl-4">
+              <h6 class="fw-bold mb-2"><%= el.title %></h6>
+              <div class="meta mb-2">
+                <span>
+                  <i data-feather="star" width="16"></i>
+                  <%= el.avg_rating %>
+                </span>
+                <span>
+                  <i data-feather="users" width="16"></i>
+                  <%= el.students_count %>
+                </span>
+                <span>
+                  <i data-feather="clock" width="16"></i>
+                  <%= el.time %>
+                </span>
+              </div>
+              <div class="divider"></div>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="price"><%= formatPrice(el.price) %></div>
+                <a href="/course/<%= el.id %>" class="text-decoration-none fw-semibold">View Details</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <% }) %>
+
+  </main>
+
+  <%- include('partial/_footer') %>
+</body>
+
+</html>

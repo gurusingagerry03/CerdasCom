@@ -1,0 +1,96 @@
+:root {
+  --edublue: #3b82f6;
+  --muted: #6b7280;
+}
+
+/* hero lembut, serasi tema cerah */
+.rv-hero {
+  background: radial-gradient(900px 340px at 85% -10%, rgba(59, 130, 246, 0.1), transparent 60%),
+    radial-gradient(700px 260px at 10% -20%, rgba(99, 102, 241, 0.08), transparent 60%);
+}
+
+/* card umum */
+.rv-card {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+/* rating besar */
+.rv-score {
+  line-height: 1;
+}
+.rv-stars-static {
+  font-size: 18px;
+  letter-spacing: 2px;
+  color: #fbbf24; /* amber-ish */
+}
+
+/* distribusi bintang */
+.rv-dist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.rv-dist-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.rv-dist-row .progress {
+  height: 8px;
+  background: rgba(0, 0, 0, 0.08);
+}
+.rv-dist-row .progress-bar {
+  background: var(--edublue);
+}
+.rv-label {
+  width: 1.25rem;
+  text-align: center;
+  color: #111827;
+  font-weight: 600;
+}
+.rv-num {
+  width: 3rem;
+  text-align: right;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* avatar kecil */
+.rv-avatar {
+  width: 40px;
+  height: 40px;
+  background: #eef2ff;
+  color: #3730a3;
+  font-weight: 700;
+}
+
+/* CSS-only star rating (input) */
+.rv-stars-input {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  gap: 0.25rem;
+  font-size: 28px;
+  line-height: 1;
+}
+.rv-stars-input input {
+  display: none;
+}
+.rv-stars-input label {
+  cursor: pointer;
+  color: #cbd5e1; /* slate-300 */
+}
+.rv-stars-input label:hover,
+.rv-stars-input label:hover ~ label {
+  color: #fbbf24;
+}
+.rv-stars-input input:checked ~ label {
+  color: #f59e0b;
+} /* amber-500 */
+
+/* kecilkan spacing paragraf ulasan */
+.rv-card p {
+  margin-bottom: 0.6rem;
+}

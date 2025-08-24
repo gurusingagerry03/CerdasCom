@@ -1,0 +1,39 @@
+.auth-wrap {
+  min-height: calc(100vh - 180px);
+}
+
+.auth-card {
+  background: #fff;
+  border: 1px solid #eef2f7;
+  border-radius: 18px;
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+}
+
+.auth-card .input-group-text {
+  background: #fff;
+  border-right: 0;
+  border-radius: 12px 0 0 12px;
+}
+.auth-card .input-group .form-control {
+  border-left: 0;
+  border-radius: 0 12px 12px 0;
+  padding: 0.9rem 1rem;
+}
+.auth-card .form-control:focus {
+  border-color: var(--edublue);
+  box-shadow: 0 0 0 4px var(--ring);
+}
+
+.auth-card .btn-primary {
+  border-radius: 12px;
+  font-weight: 700;
+  padding: 0.9rem 1rem;
+}
+
+.link-muted {
+  color: var(--muted);
+  text-decoration: none;
+}
+.link-muted:hover {
+  color: var(--ink);
+}

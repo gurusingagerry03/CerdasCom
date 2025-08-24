@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script defer src="https://unpkg.com/feather-icons"></script>
+  <link rel="stylesheet" href="/style/home.css" />
+</head>
+
+<body>
+  <%- include('partial/_nav') %>
+
+  <section class="hero">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-10 col-xl-9">
+          <h1 class="mb-3">
+            Unlock Your Potential with
+            <span class="brand-accent">CerdasCom</span>
+          </h1>
+          <p class="lead text-secondary mb-4">
+            Explore thousands of online courses to master new skills, achieve your goals, and
+            advance your career.
+          </p>
+          <a href="/course" class="btn btn-primary btn-lg px-4">Explore Courses</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="py-5">
+    <div class="container">
+      <div class="row g-4 text-center">
+        <div class="col-md-4">
+          <div class="d-flex flex-column align-items-center">
+            <div class="feature-icon mb-3"><i data-feather="award"></i></div>
+            <h5 class="fw-bold mb-1">Expert Instructors</h5>
+            <p class="text-secondary">Learn from industry experts with real-world experience.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="d-flex flex-column align-items-center">
+            <div class="feature-icon mb-3"><i data-feather="book"></i></div>
+            <h5 class="fw-bold mb-1">Diverse Courses</h5>
+            <p class="text-secondary">Choose from a wide range of topics and skills.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="d-flex flex-column align-items-center">
+            <div class="feature-icon mb-3"><i data-feather="clock"></i></div>
+            <h5 class="fw-bold mb-1">Flexible Learning</h5>
+            <p class="text-secondary">Learn at your own pace, anytime, anywhere.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="courses" class="py-5">
+    <div class="container">
+      <div class="row mb-4">
+        <div class="col text-center">
+          <h2 class="section-title mb-2">Popular Courses</h2>
+          <p class="text-secondary">Discover our most popular courses for self-improvement.</p>
+        </div>
+      </div>
+
+      <div class="row g-4">
+        <% course.forEach(el => { %>
+        <div class="col-12 col-md-6 col-xl-3">
+          <article class="course-card h-100">
+            <div class="thumb" style="background-image:url('<%= el.image %>');background-size:cover;background-position:center;">
+              <span class="level-badge"><%= el.level %></span>
+            </div>
+            <div class="p-3 p-xl-4">
+              <h6 class="fw-bold mb-2"><%= el.title %></h6>
+              <div class="meta mb-2">
+                <span>
+                  <i data-feather="star" width="16"></i>
+                  <%= el.avg_rating %>
+                </span>
+                <span>
+                  <i data-feather="users" width="16"></i>
+                  <%= el.students_count %>
+                </span>
+                <span>
+                  <i data-feather="clock" width="16"></i>
+                  <%= el.time %>
+                </span>
+              </div>
+              <div class="divider"></div>
+              <div class="d-flex justify-content-between align-items-center">
+                <div class="price"><%= formatPrice(el.price) %></div>
+                <a href="/course/<%= el.id %>" class="text-decoration-none fw-semibold">View Details</a>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <% }) %>
+
+      </div>
+
+      <div class="text-center mt-5">
+        <a href="/course" class="btn btn-outline-primary px-4 py-2">View All Courses</a>
+      </div>
+    </div>
+  </section>
+
+  <%- include('partial/_footer') %>
+</body>
+
+</html>

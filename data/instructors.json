@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "UserId": 7,
+    "work_years": 5,
+    "salary": 15000000,
+    "join_date": "2022-01-15"
+  },
+  {
+    "id": 2,
+    "UserId": 8,
+    "work_years": 3,
+    "salary": 12000000,
+    "join_date": "2023-03-10"
+  },
+  {
+    "id": 3,
+    "UserId": 9,
+    "work_years": 7,
+    "salary": 18000000,
+    "join_date": "2021-08-20"
+  }
+]

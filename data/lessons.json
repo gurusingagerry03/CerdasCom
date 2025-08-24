@@ -1,0 +1,169 @@
+[
+  {
+    "id": 1,
+    "CourseId": 1,
+    "section_title": "Intro",
+    "section_order": 1,
+    "title": "Apa itu JS?",
+    "video_url": "https://vid/1",
+    "duration": 10
+  },
+  {
+    "id": 2,
+    "CourseId": 1,
+    "section_title": "Dasar",
+    "section_order": 2,
+    "title": "Variabel & Tipe Data",
+    "video_url": "https://vid/2",
+    "duration": 25
+  },
+  {
+    "id": 3,
+    "CourseId": 1,
+    "section_title": "Dasar",
+    "section_order": 3,
+    "title": "Fungsi",
+    "video_url": "https://vid/3",
+    "duration": 30
+  },
+  {
+    "id": 4,
+    "CourseId": 1,
+    "section_title": "Project",
+    "section_order": 4,
+    "title": "Mini Project",
+    "video_url": "https://vid/4",
+    "duration": 20
+  },
+
+  {
+    "id": 5,
+    "CourseId": 2,
+    "section_title": "Setup",
+    "section_order": 1,
+    "title": "Install & Setup",
+    "video_url": "https://vid/5",
+    "duration": 15
+  },
+  {
+    "id": 6,
+    "CourseId": 2,
+    "section_title": "Dasar",
+    "section_order": 2,
+    "title": "Pandas 101",
+    "video_url": "https://vid/6",
+    "duration": 15
+  },
+  {
+    "id": 7,
+    "CourseId": 2,
+    "section_title": "Analisis",
+    "section_order": 3,
+    "title": "EDA Sederhana",
+    "video_url": "https://vid/7",
+    "duration": 20
+  },
+
+  {
+    "id": 8,
+    "CourseId": 3,
+    "section_title": "Dasar",
+    "section_order": 1,
+    "title": "Prinsip Desain",
+    "video_url": "https://vid/8",
+    "duration": 45
+  },
+
+  {
+    "id": 9,
+    "CourseId": 4,
+    "section_title": "Intro",
+    "section_order": 1,
+    "title": "Kenalan Node.js",
+    "video_url": "https://vid/9",
+    "duration": 12
+  },
+  {
+    "id": 10,
+    "CourseId": 4,
+    "section_title": "Server",
+    "section_order": 2,
+    "title": "Express Dasar",
+    "video_url": "https://vid/10",
+    "duration": 18
+  },
+  {
+    "id": 11,
+    "CourseId": 4,
+    "section_title": "API",
+    "section_order": 3,
+    "title": "Routing & Middleware",
+    "video_url": "https://vid/11",
+    "duration": 25
+  },
+  {
+    "id": 12,
+    "CourseId": 4,
+    "section_title": "Deploy",
+    "section_order": 4,
+    "title": "ENV & Deployment",
+    "video_url": "https://vid/12",
+    "duration": 15
+  },
+
+  {
+    "id": 13,
+    "CourseId": 5,
+    "section_title": "Setup",
+    "section_order": 1,
+    "title": "Vite + Tailwind",
+    "video_url": "https://vid/13",
+    "duration": 20
+  },
+  {
+    "id": 14,
+    "CourseId": 5,
+    "section_title": "UI",
+    "section_order": 2,
+    "title": "Komponen & Props",
+    "video_url": "https://vid/14",
+    "duration": 30
+  },
+  {
+    "id": 15,
+    "CourseId": 5,
+    "section_title": "State",
+    "section_order": 3,
+    "title": "State & Hooks",
+    "video_url": "https://vid/15",
+    "duration": 25
+  },
+
+  {
+    "id": 16,
+    "CourseId": 6,
+    "section_title": "Dasar",
+    "section_order": 1,
+    "title": "Relational Basics",
+    "video_url": "https://vid/16",
+    "duration": 10
+  },
+  {
+    "id": 17,
+    "CourseId": 6,
+    "section_title": "Query",
+    "section_order": 2,
+    "title": "SELECT & JOIN",
+    "video_url": "https://vid/17",
+    "duration": 20
+  },
+  {
+    "id": 18,
+    "CourseId": 6,
+    "section_title": "Design",
+    "section_order": 3,
+    "title": "Normalisasi & Index",
+    "video_url": "https://vid/18",
+    "duration": 30
+  }
+]

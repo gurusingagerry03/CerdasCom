@@ -1,0 +1,80 @@
+[
+  {
+    "id": 1,
+    "title": "JavaScript Dasar",
+    "description": "Fundamental JS untuk pemula.",
+    "image": "https://image.web.id/images/Belajar-JavaScript-Dasar4f71585cf76f0525.png",
+    "level": "Beginner",
+    "price": 150000,
+    "avg_rating": 4.0,
+    "total_duration_minutes": 85,
+    "students_count": 4,
+    "CategoryId": 1,
+    "InstructorId": 1
+  },
+  {
+    "id": 2,
+    "title": "Python untuk Data",
+    "description": "Numpy, Pandas, dan dasar analisis data.",
+    "image": "https://www.h2kinfosys.com/blog/wp-content/uploads/2024/10/Python-01_2_1.png",
+    "level": "Intermediate",
+    "price": 200000,
+    "avg_rating": 4.5,
+    "total_duration_minutes": 50,
+    "students_count": 3,
+    "CategoryId": 1,
+    "InstructorId": 2
+  },
+  {
+    "id": 3,
+    "title": "UI/UX Beginner",
+    "description": "Dasar riset dan wireframing.",
+    "image": "https://image.web.id/images/what-is-ui-ux-design_11zon.jpg",
+    "level": "Beginner",
+    "price": 180000,
+    "avg_rating": 0,
+    "total_duration_minutes": 45,
+    "students_count": 2,
+    "CategoryId": 7,
+    "InstructorId": 3
+  },
+  {
+    "id": 4,
+    "title": "Node.js Backend Dasar",
+    "description": "REST API, Express, middleware.",
+    "image": "https://www.hostinger.com/id/tutorial/wp-content/uploads/sites/37/2022/06/pengertian-node-js-dan-cara-menginstalnya.png",
+    "level": "Beginner",
+    "price": 220000,
+    "avg_rating": 4.0,
+    "total_duration_minutes": 70,
+    "students_count": 3,
+    "CategoryId": 1,
+    "InstructorId": 1
+  },
+  {
+    "id": 5,
+    "title": "React & Tailwind",
+    "description": "SPA modern dengan komponen reaktif.",
+    "image": "https://kinsta.com/wp-content/uploads/2023/04/react-must-be-in-scope-when-using-jsx.jpg",
+    "level": "Intermediate",
+    "price": 250000,
+    "avg_rating": 4.3,
+    "total_duration_minutes": 75,
+    "students_count": 5,
+    "CategoryId": 1,
+    "InstructorId": 2
+  },
+  {
+    "id": 6,
+    "title": "SQL & Database Design",
+    "description": "Relational design, query, indeks.",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQc8a_3aix3m_fOzVhaMnuGbfFkgNKt8YBzQ&s",
+    "level": "Beginner",
+    "price": 175000,
+    "avg_rating": 4.0,
+    "total_duration_minutes": 60,
+    "students_count": 2,
+    "CategoryId": 4,
+    "InstructorId": 3
+  }
+]

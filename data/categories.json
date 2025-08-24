@@ -1,0 +1,13 @@
+[
+  { "name": "Development", "icon": "code" },
+  { "name": "Business", "icon": "briefcase" },
+  { "name": "Finance & Accounting", "icon": "dollar-sign" },
+  { "name": "IT & Software", "icon": "cpu" },
+  { "name": "Office Productivity", "icon": "file-text" },
+  { "name": "Personal Development", "icon": "mic" },
+  { "name": "Design", "icon": "pen-tool" },
+  { "name": "Lifestyle", "icon": "heart" },
+  { "name": "Photography & Video", "icon": "camera" },
+  { "name": "Music", "icon": "music" },
+  { "name": "Language Learning", "icon": "globe" }
+]

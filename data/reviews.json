@@ -1,0 +1,17 @@
+[
+  { "id": 1, "EnrollmentId": 1, "rating": 4, "comment": "Materi jelas." },
+  { "id": 2, "EnrollmentId": 2, "rating": 5, "comment": "Sangat membantu." },
+  { "id": 3, "EnrollmentId": 3, "rating": 3, "comment": "Cukup bagus." },
+
+  { "id": 4, "EnrollmentId": 5, "rating": 5, "comment": "Contoh datanya mantap." },
+  { "id": 5, "EnrollmentId": 6, "rating": 4, "comment": "Penyampaian rapi." },
+
+  { "id": 6, "EnrollmentId": 10, "rating": 4, "comment": "API mudah dipahami." },
+  { "id": 7, "EnrollmentId": 11, "rating": 4, "comment": "Materi rapi & jelas." },
+
+  { "id": 8, "EnrollmentId": 13, "rating": 5, "comment": "UI modern, suka!" },
+  { "id": 9, "EnrollmentId": 14, "rating": 4, "comment": "Tailwind mantap." },
+  { "id": 10, "EnrollmentId": 15, "rating": 4, "comment": "Hook dijelaskan baik." },
+
+  { "id": 11, "EnrollmentId": 18, "rating": 4, "comment": "JOIN & index oke." }
+]
