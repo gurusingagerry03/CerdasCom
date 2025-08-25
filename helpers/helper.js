@@ -18,4 +18,17 @@ const getPercent = (num) => {
   return num.toFixed(1);
 };
 
-module.exports = { formatPrice, formatDate, getPercent };
+const toEmbedUrl = (url) => {
+  try {
+    const u = new URL(url);
+    let vid = u.searchParams.get('v') || '';
+    if (!vid && u.hostname.includes('youtu.be')) {
+      vid = u.pathname.slice(1);
+    }
+    return vid ? `https://www.youtube-nocookie.com/embed/${vid}?rel=0&modestbranding=1` : '';
+  } catch (e) {
+    return '';
+  }
+};
+
+module.exports = { formatPrice, formatDate, getPercent, toEmbedUrl };

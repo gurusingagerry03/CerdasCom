@@ -1,0 +1,112 @@
+:root {
+  --edublue: #3b82f6;
+  --muted: #6b7280;
+  --surface: #f6f7fb; /* lembut seperti screenshot */
+}
+
+/* top bar */
+.ls-topbar {
+  background: #fff;
+  position: sticky;
+  top: 0;
+  z-index: 1030;
+}
+
+/* layout */
+.ls-main {
+  background: var(--surface);
+  min-height: calc(100vh - 64px);
+}
+.ls-sidebar {
+  position: sticky;
+  top: 64px;
+  max-height: calc(100vh - 64px);
+  overflow: auto;
+}
+@media (max-width: 991.98px) {
+  .ls-sidebar {
+    top: 0;
+    max-height: none;
+  }
+}
+
+/* progress di sidebar */
+.ls-progress {
+  height: 8px;
+  background: rgba(0, 0, 0, 0.08);
+}
+.ls-progress .progress-bar {
+  background: var(--edublue);
+}
+
+/* outline list */
+.ls-outline {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+.ls-outline-item {
+  padding: 0.6rem 0.6rem 0.6rem 0.25rem;
+  border-radius: 0.5rem;
+}
+.ls-outline-title {
+  font-weight: 600;
+  line-height: 1.25;
+}
+.ls-outline-meta {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+.ls-outline-item.current {
+  background: #eef4ff;
+}
+.ls-outline-item.active .ls-outline-title {
+  opacity: 1;
+}
+.ls-outline-item .ls-outline-title {
+  opacity: 0.95;
+}
+
+/* back link */
+.ls-back {
+  text-decoration: none;
+}
+.ls-back:hover {
+  text-decoration: underline;
+}
+
+.ls-player {
+  background: #000;
+  border-radius: 1rem;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+.ls-player-inner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background: #000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.ls-playbtn {
+  width: 56px;
+  height: 40px;
+  border-radius: 20px;
+  border: 0;
+  background: rgba(255, 255, 255, 0.16);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.ls-playbtn:hover {
+  background: rgba(255, 255, 255, 0.24);
+}
+
+/* resource cards */
+.ls-res .card {
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}

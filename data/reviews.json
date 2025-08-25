@@ -1,17 +1,94 @@
 [
-  { "id": 1, "EnrollmentId": 1, "rating": 4, "comment": "Materi jelas." },
-  { "id": 2, "EnrollmentId": 2, "rating": 5, "comment": "Sangat membantu." },
-  { "id": 3, "EnrollmentId": 3, "rating": 3, "comment": "Cukup bagus." },
+  {
+    "id": 1,
+    "EnrollmentId": 1,
+    "rating": 4,
+    "comment": "Materi jelas.",
+    "createdAt": "2025-08-01T10:00:00Z",
+    "updatedAt": "2025-08-01T10:00:00Z"
+  },
+  {
+    "id": 2,
+    "EnrollmentId": 2,
+    "rating": 5,
+    "comment": "Sangat membantu.",
+    "createdAt": "2025-08-02T11:00:00Z",
+    "updatedAt": "2025-08-02T11:00:00Z"
+  },
+  {
+    "id": 3,
+    "EnrollmentId": 3,
+    "rating": 3,
+    "comment": "Cukup bagus.",
+    "createdAt": "2025-08-03T09:30:00Z",
+    "updatedAt": "2025-08-03T09:30:00Z"
+  },
 
-  { "id": 4, "EnrollmentId": 5, "rating": 5, "comment": "Contoh datanya mantap." },
-  { "id": 5, "EnrollmentId": 6, "rating": 4, "comment": "Penyampaian rapi." },
+  {
+    "id": 4,
+    "EnrollmentId": 5,
+    "rating": 5,
+    "comment": "Contoh datanya mantap.",
+    "createdAt": "2025-08-04T14:20:00Z",
+    "updatedAt": "2025-08-04T14:20:00Z"
+  },
+  {
+    "id": 5,
+    "EnrollmentId": 6,
+    "rating": 4,
+    "comment": "Penyampaian rapi.",
+    "createdAt": "2025-08-05T08:15:00Z",
+    "updatedAt": "2025-08-05T08:15:00Z"
+  },
 
-  { "id": 6, "EnrollmentId": 10, "rating": 4, "comment": "API mudah dipahami." },
-  { "id": 7, "EnrollmentId": 11, "rating": 4, "comment": "Materi rapi & jelas." },
+  {
+    "id": 6,
+    "EnrollmentId": 10,
+    "rating": 4,
+    "comment": "API mudah dipahami.",
+    "createdAt": "2025-08-06T13:45:00Z",
+    "updatedAt": "2025-08-06T13:45:00Z"
+  },
+  {
+    "id": 7,
+    "EnrollmentId": 11,
+    "rating": 4,
+    "comment": "Materi rapi & jelas.",
+    "createdAt": "2025-08-07T16:10:00Z",
+    "updatedAt": "2025-08-07T16:10:00Z"
+  },
 
-  { "id": 8, "EnrollmentId": 13, "rating": 5, "comment": "UI modern, suka!" },
-  { "id": 9, "EnrollmentId": 14, "rating": 4, "comment": "Tailwind mantap." },
-  { "id": 10, "EnrollmentId": 15, "rating": 4, "comment": "Hook dijelaskan baik." },
+  {
+    "id": 8,
+    "EnrollmentId": 13,
+    "rating": 5,
+    "comment": "UI modern, suka!",
+    "createdAt": "2025-08-08T09:00:00Z",
+    "updatedAt": "2025-08-08T09:00:00Z"
+  },
+  {
+    "id": 9,
+    "EnrollmentId": 14,
+    "rating": 4,
+    "comment": "Tailwind mantap.",
+    "createdAt": "2025-08-09T15:30:00Z",
+    "updatedAt": "2025-08-09T15:30:00Z"
+  },
+  {
+    "id": 10,
+    "EnrollmentId": 15,
+    "rating": 4,
+    "comment": "Hook dijelaskan baik.",
+    "createdAt": "2025-08-10T12:45:00Z",
+    "updatedAt": "2025-08-10T12:45:00Z"
+  },
 
-  { "id": 11, "EnrollmentId": 18, "rating": 4, "comment": "JOIN & index oke." }
+  {
+    "id": 11,
+    "EnrollmentId": 18,
+    "rating": 4,
+    "comment": "JOIN & index oke.",
+    "createdAt": "2025-08-11T17:20:00Z",
+    "updatedAt": "2025-08-11T17:20:00Z"
+  }
 ]

@@ -25,16 +25,24 @@ app.use(injectUser);
 
 app.get('/', Controller.home);
 app.get('/course', Controller.course);
-app.get('/course/:id', Controller.courseDetail);
+app.get('/course/:courseId', Controller.courseDetail);
 app.get('/category', Controller.category);
 app.get('/login', Controller.getLogin);
 app.post('/login', Controller.postLogin);
 app.get('/register', Controller.getRegister);
 app.post('/register', Controller.postRegister);
 app.get('/logout', Controller.logout);
+// student
+app.get('/myCourse/myLesson/:enrollmentId', Controller.getCourseLesson); // jangan lupa midlleware
 app.get('/myCourse/:userId', Controller.getCourseUser); // jangan lupa midlleware
+app.get('/enrollment/:userId/:courseId', Controller.getEnroll); // jangan lupa midlleware
 app.get('/myCourse/review/:enrollmentId', Controller.getReview); // jangan lupa midlleware
-
+app.post('/myCourse/review/:enrollmentId', Controller.postReview); // jangan lupa midlleware
+app.post('/myCourse/review/:enrollmentId/edit', Controller.postEditReview); // jangan lupa midlleware
+app.get('/myCourse/review/:enrollmentId/delete', Controller.getDeleteReview); // jangan lupa midlleware
+app.get('/myCourse/myLesson/finish/:lessonProgressId', Controller.getFinishCourse); // jangan lupa midlleware
+//admin
+// app.get('/admin', Controller.getAdmin);
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });

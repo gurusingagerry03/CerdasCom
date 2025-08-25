@@ -16,7 +16,15 @@
   border-radius: 1rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
-
+.stars .star {
+  color: #f59e0b;
+  stroke: currentColor;
+  opacity: 0.7;
+}
+.stars .star.filled {
+  fill: currentColor;
+  opacity: 1;
+}
 /* rating besar */
 .rv-score {
   line-height: 1;

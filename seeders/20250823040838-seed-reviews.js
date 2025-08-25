@@ -5,7 +5,6 @@ module.exports = {
   async up(queryInterface, Sequelize) {
     const data = JSON.parse(await fs.readFile('./data/reviews.json', 'utf8')).map((e) => {
       delete e.id;
-      e.createdAt = e.updatedAt = new Date();
       return e;
     });
     await queryInterface.bulkInsert('Reviews', data);

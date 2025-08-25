@@ -23,6 +23,7 @@ module.exports = (sequelize, DataTypes) => {
       title: DataTypes.STRING,
       video_url: DataTypes.TEXT,
       duration: DataTypes.INTEGER,
+      link_materi: DataTypes.STRING,
     },
     {
       sequelize,
