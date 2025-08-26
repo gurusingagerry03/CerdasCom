@@ -12,7 +12,11 @@ module.exports = (sequelize, DataTypes) => {
     }
 
     static filter(sort, search, category) {
-      const option = { where: {} };
+      const option = {
+        where: {
+          is_published: true,
+        },
+      };
       switch (sort) {
         case 'popular':
           option.order = [['students_count', 'DESC']];
@@ -53,11 +57,21 @@ module.exports = (sequelize, DataTypes) => {
       avg_rating: DataTypes.DECIMAL,
       total_duration_minutes: DataTypes.INTEGER,
       students_count: DataTypes.INTEGER,
+      is_published: DataTypes.BOOLEAN,
+      CategoryId: DataTypes.INTEGER,
+      InstructorId: DataTypes.INTEGER,
     },
     {
       sequelize,
       modelName: 'Course',
     }
   );
+
+  Course.beforeCreate((instance) => {
+    instance.total_duration_minutes = 0;
+    instance.students_count = 0;
+    instance.avg_rating = 0;
+    instance.is_published = false;
+  });
   return Course;
 };

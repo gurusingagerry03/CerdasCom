@@ -70,5 +70,13 @@
     "password": "hash9",
     "full_name": "Ivan Prakoso",
     "role": "instructor"
+  },
+  {
+    "id": 10,
+    "username": "admin",
+    "email": "admin@gmail.com",
+    "password": "123",
+    "full_name": "admin",
+    "role": "admin"
   }
 ]

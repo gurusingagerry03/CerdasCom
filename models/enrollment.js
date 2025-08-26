@@ -44,5 +44,35 @@ module.exports = (sequelize, DataTypes) => {
       modelName: 'Enrollment',
     }
   );
+
+  Enrollment.afterCreate(async (enrollment) => {
+    try {
+      const { Lesson, LessonProgress, Course } = sequelize.models;
+
+      const lessons = await Lesson.findAll({
+        where: { CourseId: enrollment.CourseId },
+      });
+
+      if (!lessons.length) return;
+
+      let course = await Course.findByPk(enrollment.CourseId);
+      await course.update({
+        students_count: course.students_count + 1,
+      });
+      const now = new Date();
+      const rows = lessons.map((e) => ({
+        EnrollmentId: enrollment.id,
+        LessonId: e.id,
+        isCompleted: false,
+        completed_at: null,
+        createdAt: now,
+        updatedAt: now,
+      }));
+
+      await LessonProgress.bulkCreate(rows);
+    } catch (error) {
+      throw error;
+    }
+  });
   return Enrollment;
 };

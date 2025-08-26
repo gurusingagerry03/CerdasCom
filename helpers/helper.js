@@ -13,9 +13,36 @@ const formatDate = (date) => {
   });
 };
 
+const formatDateToInput = (date) => {
+  return date.toISOString().split('T')[0];
+};
+
 const getPercent = (num) => {
   num = num * 100;
   return num.toFixed(1);
 };
 
-module.exports = { formatPrice, formatDate, getPercent };
+const toEmbedUrl = (url) => {
+  try {
+    const u = new URL(url);
+    let vid = u.searchParams.get('v') || '';
+    if (!vid && u.hostname.includes('youtu.be')) {
+      vid = u.pathname.slice(1);
+    }
+    return vid ? `https://www.youtube-nocookie.com/embed/${vid}?rel=0&modestbranding=1` : '';
+  } catch (e) {
+    return '';
+  }
+};
+
+const getError = (str) => {
+  let data = str.split(',');
+  let obj = {};
+  data.forEach((el) => {
+    let res = el.split(':');
+    obj[res[0]] = res[1];
+  });
+  return obj;
+};
+
+module.exports = { formatPrice, formatDate, getPercent, toEmbedUrl, formatDateToInput, getError };

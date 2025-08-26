@@ -5,8 +5,9 @@
     "section_title": "Intro",
     "section_order": 1,
     "title": "Apa itu JS?",
-    "video_url": "https://vid/1",
-    "duration": 10
+    "video_url": "https://www.youtube.com/watch?v=RGaW82k4dK4",
+    "duration": 10,
+    "link_materi": "materi1.pdf"
   },
   {
     "id": 2,
@@ -14,8 +15,9 @@
     "section_title": "Dasar",
     "section_order": 2,
     "title": "Variabel & Tipe Data",
-    "video_url": "https://vid/2",
-    "duration": 25
+    "video_url": "https://www.youtube.com/watch?v=mD6uSGSjgr4&t=825s",
+    "duration": 25,
+    "link_materi": "materi2.pdf"
   },
   {
     "id": 3,
@@ -23,8 +25,9 @@
     "section_title": "Dasar",
     "section_order": 3,
     "title": "Fungsi",
-    "video_url": "https://vid/3",
-    "duration": 30
+    "video_url": "https://www.youtube.com/watch?v=1qa41JLgx-M",
+    "duration": 30,
+    "link_materi": "materi2.pdf"
   },
   {
     "id": 4,
@@ -32,18 +35,19 @@
     "section_title": "Project",
     "section_order": 4,
     "title": "Mini Project",
-    "video_url": "https://vid/4",
-    "duration": 20
+    "video_url": "https://www.youtube.com/watch?v=RGaW82k4dK4",
+    "duration": 20,
+    "link_materi": "materi5.pdf"
   },
-
   {
     "id": 5,
     "CourseId": 2,
     "section_title": "Setup",
     "section_order": 1,
     "title": "Install & Setup",
-    "video_url": "https://vid/5",
-    "duration": 15
+    "video_url": "https://www.youtube.com/watch?v=RGaW82k4dK4",
+    "duration": 15,
+    "link_materi": "materi5.pdf"
   },
   {
     "id": 6,
@@ -51,8 +55,9 @@
     "section_title": "Dasar",
     "section_order": 2,
     "title": "Pandas 101",
-    "video_url": "https://vid/6",
-    "duration": 15
+    "video_url": "https://www.youtube.com/watch?v=9n7TYrzDjk4",
+    "duration": 15,
+    "link_materi": "materi1.pdf"
   },
   {
     "id": 7,
@@ -60,28 +65,29 @@
     "section_title": "Analisis",
     "section_order": 3,
     "title": "EDA Sederhana",
-    "video_url": "https://vid/7",
-    "duration": 20
+    "video_url": "https://www.youtube.com/watch?v=RGaW82k4dK4",
+    "duration": 20,
+    "link_materi": "materi1.pdf"
   },
-
   {
     "id": 8,
     "CourseId": 3,
     "section_title": "Dasar",
     "section_order": 1,
     "title": "Prinsip Desain",
-    "video_url": "https://vid/8",
-    "duration": 45
+    "video_url": "https://www.youtube.com/watch?v=1qa41JLgx-M",
+    "duration": 45,
+    "link_materi": "materi2.pdf"
   },
-
   {
     "id": 9,
     "CourseId": 4,
     "section_title": "Intro",
     "section_order": 1,
     "title": "Kenalan Node.js",
-    "video_url": "https://vid/9",
-    "duration": 12
+    "video_url": "https://www.youtube.com/watch?v=poZtdyC24P4",
+    "duration": 12,
+    "link_materi": "materi5.pdf"
   },
   {
     "id": 10,
@@ -89,8 +95,9 @@
     "section_title": "Server",
     "section_order": 2,
     "title": "Express Dasar",
-    "video_url": "https://vid/10",
-    "duration": 18
+    "video_url": "https://www.youtube.com/watch?v=RGaW82k4dK4",
+    "duration": 18,
+    "link_materi": "materi5.pdf"
   },
   {
     "id": 11,
@@ -98,8 +105,9 @@
     "section_title": "API",
     "section_order": 3,
     "title": "Routing & Middleware",
-    "video_url": "https://vid/11",
-    "duration": 25
+    "video_url": "https://www.youtube.com/watch?v=1qa41JLgx-M",
+    "duration": 25,
+    "link_materi": "materi5.pdf"
   },
   {
     "id": 12,
@@ -107,18 +115,19 @@
     "section_title": "Deploy",
     "section_order": 4,
     "title": "ENV & Deployment",
-    "video_url": "https://vid/12",
-    "duration": 15
+    "video_url": "https://www.youtube.com/watch?v=9n7TYrzDjk4",
+    "duration": 15,
+    "link_materi": "materi2.pdf"
   },
-
   {
     "id": 13,
     "CourseId": 5,
     "section_title": "Setup",
     "section_order": 1,
     "title": "Vite + Tailwind",
-    "video_url": "https://vid/13",
-    "duration": 20
+    "video_url": "https://www.youtube.com/watch?v=9n7TYrzDjk4",
+    "duration": 20,
+    "link_materi": "materi5.pdf"
   },
   {
     "id": 14,
@@ -126,8 +135,9 @@
     "section_title": "UI",
     "section_order": 2,
     "title": "Komponen & Props",
-    "video_url": "https://vid/14",
-    "duration": 30
+    "video_url": "https://www.youtube.com/watch?v=mD6uSGSjgr4&t=825s",
+    "duration": 30,
+    "link_materi": "materi1.pdf"
   },
   {
     "id": 15,
@@ -135,18 +145,19 @@
     "section_title": "State",
     "section_order": 3,
     "title": "State & Hooks",
-    "video_url": "https://vid/15",
-    "duration": 25
+    "video_url": "https://www.youtube.com/watch?v=1qa41JLgx-M",
+    "duration": 25,
+    "link_materi": "materi4.pdf"
   },
-
   {
     "id": 16,
     "CourseId": 6,
     "section_title": "Dasar",
     "section_order": 1,
     "title": "Relational Basics",
-    "video_url": "https://vid/16",
-    "duration": 10
+    "video_url": "https://www.youtube.com/watch?v=mD6uSGSjgr4&t=825s",
+    "duration": 10,
+    "link_materi": "materi3.pdf"
   },
   {
     "id": 17,
@@ -154,8 +165,9 @@
     "section_title": "Query",
     "section_order": 2,
     "title": "SELECT & JOIN",
-    "video_url": "https://vid/17",
-    "duration": 20
+    "video_url": "https://www.youtube.com/watch?v=1qa41JLgx-M",
+    "duration": 20,
+    "link_materi": "materi2.pdf"
   },
   {
     "id": 18,
@@ -163,7 +175,8 @@
     "section_title": "Design",
     "section_order": 3,
     "title": "Normalisasi & Index",
-    "video_url": "https://vid/18",
-    "duration": 30
+    "video_url": "https://www.youtube.com/watch?v=mD6uSGSjgr4&t=825s",
+    "duration": 30,
+    "link_materi": "materi1.pdf"
   }
 ]

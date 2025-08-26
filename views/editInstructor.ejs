@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Categories</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <script defer src="https://unpkg.com/feather-icons"></script>
+
+  <link rel="stylesheet" href="/style/home.css" />
+  <link rel="stylesheet" href="/style/admin.css" />
+</head>
+
+<body>
+  <%- include('partial/_nav') %>
+  <% error = {} %>
+  <% if (errors) { %>
+  <% error = getError(errors) %>
+  <% } %>
+  <main class="py-4 py-lg-5">
+    <div class="container" style="max-width:880px">
+
+      <div class="d-flex align-items-center gap-3 mb-4">
+        <div>
+          <h3 class="mb-0 fw-bold">Edit Instructor</h3>
+        </div>
+      </div>
+      <div class="course-card">
+        <div class="p-3 p-xl-4">
+          <form action="/admin/instructors/<%= instructor.id %>/edit" method="post" class="row g-3">
+            <div class="col-12">
+              <label class="form-label fw-semibold">User</label>
+              <div class="input-group ">
+                <span class="input-group-text bg-white border-0">
+                  <i data-feather="user" width="16"></i>
+                </span>
+                <input type="text" class="form-control border-0" value='<%= instructor.User.full_name%>' disabled>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <label class="form-label fw-semibold">Salary (IDR)</label>
+              <div class="input-group <%= error.salary ? 'is-invalid' : ''  %>">
+                <span class="input-group-text bg-white border-0">Rp</span>
+                <input type="number" min="0" class="form-control border-0" name="salary" value="<%= instructor.salary %>">
+              </div>
+              <div class="invalid-feedback">
+                <%= error.salary %>
+              </div>
+            </div>
+            <div class="col-12 col-md-4">
+              <label class="form-label fw-semibold">Join Date</label>
+              <input type="date" class="form-control <%= error.join_date ? 'is-invalid' : ''  %>" name="join_date" value="<%= formatDateToInput(instructor.join_date) %>">
+              <div class="invalid-feedback">
+                <%= error.join_date %>
+              </div>
+            </div>
+            <div class="divider"></div>
+            <div class="col-12 d-flex gap-2">
+              <button type="submit" class="btn btn-primary">
+                <i data-feather="save" width="16"></i> Simpan
+              </button>
+              <a href="/admin" class="btn btn-outline-secondary">Kembali</a>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+
+  <%- include('partial/_footer') %>
+</body>
+
+</html>

@@ -78,8 +78,20 @@
 
             <div class="p-3 p-lg-4">
               <div class="price-tag"><%= formatPrice(course.price) %></div>
-              <button class="btn btn-enroll w-100 mb-3">Enroll Now</button>
-
+              <% if (user) { %>
+              <% if (user.role === 'student') { %>
+              <% if (isEnrolled) { %>
+              <a href="/myCourse/<%= user.id %>" class="btn btn-enroll w-100 mb-3">My Course</a>
+              <% } else { %>
+              <a href="/enrollment/<%= user.id %>/<%= course.id %>" class="btn btn-enroll w-100 mb-3">Enroll Now</a>
+              <% } %>
+              <% } else if(user.role === 'admin') { %>
+              <div class="mb-3" style="height:42px;"></div>
+              <% } %>
+              <% }else{ %>
+              <% const msg = `harap login` %>
+              <a href="/login/?msg=<%= msg %>" class="btn btn-enroll w-100 mb-3">Enroll Now</a>
+              <% } %>
               <div class="sidebar-meta">
                 <div class="label">This course includes:</div>
                 <ul class="list-unstyled mt-2 mb-0">
@@ -102,6 +114,7 @@
                 </ul>
               </div>
             </div>
+
           </div>
         </aside>
         <h4 class="fw-bold mb-3 mt-4">Student Reviews</h4>

@@ -61,17 +61,17 @@
     "id": 8,
     "UserId": 3,
     "CourseId": 3,
-    "status": "active",
+    "status": "completed",
     "last_activity_at": "2025-08-23T03:50:00.000Z",
-    "completed_at": null
+    "completed_at": "2025-08-23T03:50:00.000Z"
   },
   {
     "id": 9,
     "UserId": 4,
     "CourseId": 3,
-    "status": "active",
+    "status": "completed",
     "last_activity_at": "2025-08-23T03:55:00.000Z",
-    "completed_at": null
+    "completed_at": "2025-08-23T03:55:00.000Z"
   },
 
   {

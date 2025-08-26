@@ -2,7 +2,16 @@ const { User } = require('../models');
 
 const isLoggedIn = function (req, res, next) {
   if (!req.session.user) {
-    return res.redirect(`/`);
+    const msg = `harap login`;
+    return res.redirect(`/login/?msg=${msg}`);
+  }
+  next();
+};
+
+const isAdmin = (req, res, next) => {
+  if (req.session.user.role !== 'admin') {
+    const msg = `Not Access`;
+    return res.redirect(`/?msg=${msg}`);
   }
   next();
 };
@@ -23,4 +32,5 @@ const injectUser = async function (req, res, next) {
 module.exports = {
   isLoggedIn,
   injectUser,
+  isAdmin,
 };
