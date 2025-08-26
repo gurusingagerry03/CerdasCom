@@ -10,7 +10,8 @@
     "total_duration_minutes": 85,
     "students_count": 4,
     "CategoryId": 1,
-    "InstructorId": 1
+    "InstructorId": 1,
+    "is_published": true
   },
   {
     "id": 2,
@@ -23,7 +24,8 @@
     "total_duration_minutes": 50,
     "students_count": 3,
     "CategoryId": 1,
-    "InstructorId": 2
+    "InstructorId": 2,
+    "is_published": true
   },
   {
     "id": 3,
@@ -36,7 +38,8 @@
     "total_duration_minutes": 45,
     "students_count": 2,
     "CategoryId": 7,
-    "InstructorId": 3
+    "InstructorId": 3,
+    "is_published": true
   },
   {
     "id": 4,
@@ -49,7 +52,8 @@
     "total_duration_minutes": 70,
     "students_count": 3,
     "CategoryId": 1,
-    "InstructorId": 1
+    "InstructorId": 1,
+    "is_published": true
   },
   {
     "id": 5,
@@ -62,7 +66,8 @@
     "total_duration_minutes": 75,
     "students_count": 5,
     "CategoryId": 1,
-    "InstructorId": 2
+    "InstructorId": 2,
+    "is_published": true
   },
   {
     "id": 6,
@@ -75,6 +80,7 @@
     "total_duration_minutes": 60,
     "students_count": 2,
     "CategoryId": 4,
-    "InstructorId": 3
+    "InstructorId": 3,
+    "is_published": true
   }
 ]

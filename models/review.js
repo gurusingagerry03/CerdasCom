@@ -42,12 +42,46 @@ module.exports = (sequelize, DataTypes) => {
       }
     }
   }
-
   Review.init(
     {
       EnrollmentId: DataTypes.INTEGER,
-      rating: DataTypes.INTEGER,
-      comment: DataTypes.TEXT,
+      rating: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+          notEmpty: {
+            msg: 'rating:Rating tidak boleh kosong',
+          },
+          notNull: {
+            msg: 'rating:Rating tidak boleh kosong',
+          },
+          min: {
+            args: [1],
+            msg: 'rating:Rating minimal 1',
+          },
+          max: {
+            args: [5],
+            msg: 'rating:Rating maksimal 5',
+          },
+        },
+      },
+      comment: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+        validate: {
+          notEmpty: {
+            msg: 'comment:Komentar tidak boleh kosong',
+          },
+          notNull: {
+            msg: 'comment:Komentar tidak boleh kosong',
+          },
+          minWords(value) {
+            if (value.split(' ').length < 5) {
+              throw new Error('comment:Komentar minimal 5 kata');
+            }
+          },
+        },
+      },
     },
     {
       sequelize,

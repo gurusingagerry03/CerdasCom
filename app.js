@@ -1,6 +1,6 @@
 const express = require('express');
 const Controller = require('./controllers/controller');
-const { isLoggedIn, injectUser } = require('./middlewares/auth');
+const { isLoggedIn, injectUser, isAdmin } = require('./middlewares/auth');
 const app = express();
 const session = require('express-session');
 const port = 3000;
@@ -42,7 +42,12 @@ app.post('/myCourse/review/:enrollmentId/edit', Controller.postEditReview); // j
 app.get('/myCourse/review/:enrollmentId/delete', Controller.getDeleteReview); // jangan lupa midlleware
 app.get('/myCourse/myLesson/finish/:lessonProgressId', Controller.getFinishCourse); // jangan lupa midlleware
 //admin
-// app.get('/admin', Controller.getAdmin);
+app.get('/admin', isLoggedIn, isAdmin, Controller.admin);
+app.get('/admin/reports', Controller.reports);
+app.get('/admin/users/:id/demote', Controller.demote);
+app.get('/admin/users/:id/promote', Controller.promote);
+app.get('/admin/instructors/:id/edit', Controller.getEditInstructor);
+app.post('/admin/instructors/:id/edit', Controller.postEditInstructor);
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });

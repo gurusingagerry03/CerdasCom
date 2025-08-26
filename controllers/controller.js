@@ -1,5 +1,13 @@
 const { Op, where } = require('sequelize');
-const { formatPrice, formatDate, getPercent, toEmbedUrl } = require('../helpers/helper');
+const {
+  formatPrice,
+  formatDate,
+  getPercent,
+  toEmbedUrl,
+  formatDateToInput,
+  getError,
+} = require('../helpers/helper');
+
 const {
   Course,
   Enrollment,
@@ -11,14 +19,14 @@ const {
   LessonProgress,
 } = require('../models');
 const bcrypt = require('bcryptjs');
+
 class Controller {
   static async getLogin(req, res) {
     try {
+      let { errors, msg } = req.query;
       const page = 'home';
-      res.render('login', { page });
+      res.render('login', { page, errors, getError, msg });
     } catch (error) {
-      console.log(error);
-
       res.send(error);
     }
   }
@@ -29,7 +37,6 @@ class Controller {
       let user = await User.findOne({
         where: { email: email },
       });
-
       if (user) {
         const isValidPassword = bcrypt.compareSync(password, user.password);
 
@@ -38,25 +45,28 @@ class Controller {
             id: user.id,
             role: user.role,
           };
-          res.redirect(`/myCourse/${user.id}`);
+          if (user.role === 'admin') {
+            res.redirect(`/admin`);
+          } else {
+            res.redirect(`/myCourse/${user.id}`);
+          }
         } else {
           throw {
-            name: 'LoginValidationError',
-            error: 'password salah.',
+            name: 'SequelizeValidationError',
+            errors: [{ message: 'msg:email atau password salah ' }],
           };
         }
       } else {
         throw {
-          name: 'LoginValidationError',
-          error: 'email atau password salah ',
+          name: 'SequelizeValidationError',
+          errors: [{ message: 'msg:email atau password salah ' }],
         };
       }
     } catch (error) {
-      if (error.name === 'LoginValidationError') {
-        res.redirect(`/login/?error=${error.error}`);
+      if (error.name === 'SequelizeValidationError') {
+        error = error.errors.map((el) => el.message);
+        res.redirect(`/login/?errors=${error}`);
       } else {
-        console.log(error);
-
         res.send(error);
       }
     }
@@ -64,11 +74,10 @@ class Controller {
 
   static async getRegister(req, res) {
     try {
+      let { errors } = req.query;
       const page = 'home';
-      res.render('register', { page });
+      res.render('register', { page, errors, getError });
     } catch (error) {
-      console.log(error);
-
       res.send(error);
     }
   }
@@ -79,9 +88,15 @@ class Controller {
       await User.create({ full_name, email, password, username });
       res.redirect('/login');
     } catch (error) {
-      console.log(error);
-
-      res.send(error);
+      if (error.name === 'SequelizeValidationError') {
+        error = error.errors.map((el) => el.message);
+        res.redirect(`/register/?errors=${error}`);
+      } else if (error.name === 'SequelizeUniqueConstraintError') {
+        error = error.errors.map((el) => el.message);
+        res.redirect(`/register/?errors=${error}`);
+      } else {
+        res.send(error);
+      }
     }
   }
 
@@ -101,12 +116,16 @@ class Controller {
 
   static async home(req, res) {
     try {
+      let { msg } = req.query;
       let page = 'home';
       let course = await Course.findAll({
         order: [['students_count', 'DESC']],
+        where: {
+          is_published: true,
+        },
         limit: 4,
       });
-      res.render('home', { page, course, formatPrice });
+      res.render('home', { page, course, formatPrice, msg });
     } catch (error) {
       console.log(error);
 
@@ -197,12 +216,16 @@ class Controller {
 
   static async getCourseUser(req, res) {
     try {
+      let { msg } = req.query;
       let page = 'course';
       let { userId } = req.params;
       let enrollmentCompleate = await Enrollment.findAll({
         include: [
           {
             model: Course,
+            where: {
+              is_published: true,
+            },
             include: [
               {
                 model: Category,
@@ -231,6 +254,9 @@ class Controller {
         include: [
           {
             model: Course,
+            where: {
+              is_published: true,
+            },
             include: [
               {
                 model: Category,
@@ -267,6 +293,7 @@ class Controller {
         enrollmentUnCompleate,
         formatDate,
         getPercent,
+        msg,
       });
     } catch (error) {
       console.log(error);
@@ -277,6 +304,7 @@ class Controller {
 
   static async getReview(req, res) {
     try {
+      let { errors, msg } = req.query;
       let { enrollmentId } = req.params;
       let enrollment = await Enrollment.findByPk(enrollmentId);
       let review = await Review.findOne({
@@ -302,9 +330,7 @@ class Controller {
         },
         order: [[{ model: Review }, 'updatedAt', 'DESC']],
       });
-
       const percentRating = Enrollment.totalRatingPerStar(reviews);
-
       res.render('review', {
         reviews,
         course,
@@ -312,6 +338,9 @@ class Controller {
         formatDate,
         enrollmentId,
         review,
+        errors,
+        getError,
+        msg,
       });
     } catch (error) {
       console.log(error);
@@ -329,10 +358,16 @@ class Controller {
         comment,
         EnrollmentId: enrollmentId,
       });
-      res.redirect(`/myCourse/review/${enrollmentId}`);
+      const msg = 'review added';
+      res.redirect(`/myCourse/review/${enrollmentId}/?msg=${msg}`);
     } catch (error) {
-      console.log(error);
-      res.send(error);
+      if (error.name === 'SequelizeValidationError') {
+        const { enrollmentId } = req.params;
+        error = error.errors.map((el) => el.message);
+        res.redirect(`/myCourse/review/${enrollmentId}/?errors=${error}`);
+      } else {
+        res.send(error);
+      }
     }
   }
 
@@ -351,7 +386,8 @@ class Controller {
         comment,
       });
 
-      res.redirect(`/myCourse/review/${enrollmentId}`);
+      const msg = 'review updated';
+      res.redirect(`/myCourse/review/${enrollmentId}/?msg=${msg}`);
     } catch (error) {
       console.log(error);
       res.send(error);
@@ -369,7 +405,8 @@ class Controller {
 
       await review.destroy();
 
-      res.redirect(`/myCourse/review/${enrollmentId}`);
+      const msg = 'review berhasil dihapus';
+      res.redirect(`/myCourse/review/${enrollmentId}/?msg=${msg}`);
     } catch (error) {
       console.log(error);
       res.send(error);
@@ -379,6 +416,7 @@ class Controller {
   static async getEnroll(req, res) {
     try {
       let { userId, courseId } = req.params;
+      let course = await Course.findByPk(courseId);
       await Enrollment.create({
         UserId: userId,
         CourseId: courseId,
@@ -386,8 +424,8 @@ class Controller {
         last_activity_at: new Date(),
         completed_at: null,
       });
-
-      res.redirect(`/myCourse/${userId}`);
+      let msg = `${course.title} added`;
+      res.redirect(`/myCourse/${userId}/?msg=${encodeURIComponent(msg)}`);
     } catch (error) {
       console.log(error);
 
@@ -406,8 +444,10 @@ class Controller {
         ],
         order: [[Lesson, 'section_order', 'ASC']],
       });
+      let course = await Course.findByPk(enrol.CourseId);
       if (enrol.status === 'completed') {
-        res.redirect(`/myCourse/${enrol.UserId}`);
+        const msg = `Your Compleated Course ${course.title} `;
+        res.redirect(`/myCourse/${enrol.UserId}/?msg=${msg}`);
       }
       let firstIncomplete = await enrol.getLessons({
         through: { where: { isCompleted: false } },
@@ -418,8 +458,6 @@ class Controller {
       const totalCompleate = await enrol.countLessons({
         through: { where: { isCompleted: true } },
       });
-
-      let course = await Course.findByPk(enrol.CourseId);
 
       res.render(`courseLesson`, {
         course,
@@ -449,6 +487,148 @@ class Controller {
       console.log(error);
 
       res.send(error);
+    }
+  }
+
+  static async admin(req, res) {
+    try {
+      const { msg } = req.query;
+      const page = 'home';
+      let users = await User.findAll({
+        include: Instructor,
+        where: {
+          role: { [Op.ne]: 'admin' },
+        },
+      });
+      let instructors = await Instructor.findAll({
+        include: User,
+      });
+      let totalInstructors = await User.count({ where: { role: 'instructor' } });
+      res.render(`admin`, {
+        page,
+        users,
+        totalInstructors,
+        instructors,
+        formatDate,
+        formatPrice,
+        msg,
+      });
+    } catch (error) {
+      console.log(error);
+      res.send(error);
+    }
+  }
+
+  static async promote(req, res) {
+    try {
+      const { id } = req.params;
+      let user = await User.findByPk(id);
+      await user.update({
+        role: 'instructor',
+      });
+      await Instructor.create({
+        UserId: id,
+        salary: 0,
+        join_date: new Date(),
+      });
+      const msg = `${user.full_name} Promoted`;
+      res.redirect(`/admin/?msg=${msg}`);
+    } catch (error) {
+      console.log(error);
+      res.send(error);
+    }
+  }
+
+  static async demote(req, res) {
+    try {
+      const { id } = req.params;
+      let user = await User.findByPk(id);
+      await user.update({
+        role: 'student',
+      });
+
+      let instructor = await Instructor.findOne({
+        where: {
+          UserId: id,
+        },
+      });
+      await instructor.destroy();
+
+      const msg = `${user.full_name} Demoted`;
+      res.redirect(`/admin/?msg=${msg}`);
+    } catch (error) {
+      console.log(error);
+      res.send(error);
+    }
+  }
+
+  static async reports(req, res) {
+    try {
+      let courses = await Course.findAll({
+        order: [['title', 'ASC']],
+        raw: true,
+      });
+
+      let revLabels = courses.map((elm) => elm.title);
+      let revValues = courses.map((elm) => Number(elm.price) * Number(elm.students_count || 0));
+
+      let topCourses = await Course.findAll({
+        order: [['students_count', 'DESC']],
+        limit: 5,
+        raw: true,
+      });
+
+      let topLabels = topCourses.map((elm) => elm.title);
+      let topValues = topCourses.map((elm) => Number(elm.students_count || 0));
+
+      res.render('reports', {
+        page: 'reports',
+        revLabels,
+        revValues,
+        topLabels,
+        topValues,
+      });
+    } catch (error) {
+      console.log(error);
+
+      res.send(error);
+    }
+  }
+
+  static async getEditInstructor(req, res) {
+    try {
+      let { errors } = req.query;
+      const page = 'home';
+      let { id } = req.params;
+      const instructor = await Instructor.findByPk(id, {
+        include: User,
+      });
+      res.render(`editInstructor`, { page, formatDateToInput, instructor, errors, getError });
+    } catch (error) {
+      console.log(error);
+      res.send(error);
+    }
+  }
+
+  static async postEditInstructor(req, res) {
+    try {
+      const page = 'home';
+      let { id } = req.params;
+      const instructor = await Instructor.findByPk(id, {
+        include: User,
+      });
+      await instructor.update(req.body);
+
+      const msg = `${instructor.User.full_name} updated`;
+      res.redirect(`/admin/?msg=${msg}`);
+    } catch (error) {
+      if (error.name === 'SequelizeValidationError') {
+        error = error.errors.map((el) => el.message);
+        let { id } = req.params;
+        res.redirect(`/admin/instructors/${id}/edit/?errors=${error}`);
+      } else {
+        res.send(error);
+      }
     }
   }
 }

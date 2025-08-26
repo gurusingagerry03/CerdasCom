@@ -36,7 +36,23 @@
             <span id="navName" class="fw-semibold d-lg-inline"><%= user.firstName %></span>
           </button>
           <ul class="dropdown-menu dropdown-menu-end">
-            <li><a class="dropdown-item" href="/myCourse/<%= user.id %>">My Course</a></li>
+
+            <% if (user.role === 'admin') { %>
+            <li>
+              <a class="dropdown-item" href="/admin">Admin Panel</a>
+            </li>
+            <li>
+              <hr class="dropdown-divider" />
+            </li>
+            <li>
+              <a href="/admin/reports" class="dropdown-item"> Reports </a>
+            </li>
+            <% }else{ %>
+            <li>
+              <a class="dropdown-item" href="/myCourse/<%= user.id %>">My Course</a>
+            </li>
+            <% } %>
+
             <li>
               <hr class="dropdown-divider" />
             </li>

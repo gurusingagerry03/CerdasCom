@@ -13,6 +13,10 @@ const formatDate = (date) => {
   });
 };
 
+const formatDateToInput = (date) => {
+  return date.toISOString().split('T')[0];
+};
+
 const getPercent = (num) => {
   num = num * 100;
   return num.toFixed(1);
@@ -31,4 +35,14 @@ const toEmbedUrl = (url) => {
   }
 };
 
-module.exports = { formatPrice, formatDate, getPercent, toEmbedUrl };
+const getError = (str) => {
+  let data = str.split(',');
+  let obj = {};
+  data.forEach((el) => {
+    let res = el.split(':');
+    obj[res[0]] = res[1];
+  });
+  return obj;
+};
+
+module.exports = { formatPrice, formatDate, getPercent, toEmbedUrl, formatDateToInput, getError };
