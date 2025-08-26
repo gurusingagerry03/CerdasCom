@@ -631,6 +631,95 @@ class Controller {
       }
     }
   }
+
+  static async instructor(req, res) {
+    try {
+      let page = 'home';
+      let totalCourses = await Course.count();
+      let publishedCourses = await Course.count({ where: { is_published: true } });
+      let totalStudents = await Course.sum('students_count');
+      let avgRating = await Course.sum('avg_rating');
+      let total = await Course.count({
+        where: {
+          avg_rating: {
+            [Op.not]: 0,
+          },
+        },
+      });
+
+      avgRating = avgRating.toFixed(1);
+      res.render(`dashboard`, {
+        page,
+        totalCourses,
+        publishedCourses,
+        totalStudents,
+        avgRating,
+        total,
+      });
+    } catch (error) {
+      console.log(error);
+      res.send(error);
+    }
+  }
+
+  static async listCourse(req, res) {
+    try {
+      let { msg } = req.query;
+      let courses = await Course.findAll();
+      let page = 'course';
+      res.render(`courseList`, { page, courses, msg });
+    } catch (error) {
+      console.log(error);
+      res.send(error);
+    }
+  }
+
+  static async addCourse(req, res) {
+    try {
+      let categories = await Category.findAll();
+      let instructors = await Instructor.findAll({
+        include: User,
+      });
+      let page = 'course';
+      res.render(`addCourse`, { page, categories, instructors });
+    } catch (error) {
+      console.log(error);
+      res.send(error);
+    }
+  }
+
+  static async postCourse(req, res) {
+    try {
+      const { title, description, level, price, CategoryId, InstructorId } = req.body;
+      const publicPath = req.file ? `/uploads/${req.file.filename}` : null;
+      await Course.create({
+        title,
+        description,
+        level,
+        price,
+        CategoryId,
+        InstructorId,
+
+        image: publicPath,
+      });
+      res.redirect('/instructor/courseList');
+    } catch (error) {
+      console.log(error);
+      res.send(error);
+    }
+  }
+
+  static async deleteCourse(req, res) {
+    try {
+      const { id } = req.params;
+      const course = await Course.findByPk(id);
+      await course.destroy();
+      const msg = `${course.title} deeleted`;
+      res.redirect(`/instructor/courseList/?msg=${encodeURIComponent(msg)}`);
+    } catch (error) {
+      res.send(error);
+    }
+  }
 }
 
 module.exports = Controller;

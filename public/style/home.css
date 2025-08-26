@@ -22,7 +22,7 @@ body {
 
 .input-group.is-invalid .form-control,
 .input-group.is-invalid .input-group-text {
-  border-color: #dc3545; /* merah Bootstrap */
+  border-color: #dc3545;
 }
 
 .input-group.is-invalid .form-control:focus {

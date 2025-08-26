@@ -2,6 +2,7 @@ const express = require('express');
 const Controller = require('./controllers/controller');
 const { isLoggedIn, injectUser, isAdmin } = require('./middlewares/auth');
 const app = express();
+const multer = require('multer');
 const session = require('express-session');
 const port = 3000;
 app.use(
@@ -18,10 +19,17 @@ app.use(
 app.set('view engine', 'ejs');
 app.use(express.urlencoded({ extended: false }));
 const path = require('path');
-
 app.use(express.static(path.join(__dirname, 'public')));
-
 app.use(injectUser);
+
+const storage = multer.diskStorage({
+  destination: path.join(__dirname, 'public', 'uploads'),
+  filename: (req, file, cb) => {
+    cb(null, Date.now() + path.extname(file.originalname));
+  },
+});
+
+const upload = multer({ storage });
 
 app.get('/', Controller.home);
 app.get('/course', Controller.course);
@@ -48,6 +56,13 @@ app.get('/admin/users/:id/demote', Controller.demote);
 app.get('/admin/users/:id/promote', Controller.promote);
 app.get('/admin/instructors/:id/edit', Controller.getEditInstructor);
 app.post('/admin/instructors/:id/edit', Controller.postEditInstructor);
+//instructor
+app.get('/instructor', Controller.instructor);
+app.get('/instructor/courseList', Controller.listCourse);
+app.get('/instructor/addCourse', Controller.addCourse);
+app.post('/instructor/addCourse', upload.single('image_file'), Controller.postCourse);
+app.get('/course/:id/delete', upload.single('image_file'), Controller.deleteCourse);
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
 });

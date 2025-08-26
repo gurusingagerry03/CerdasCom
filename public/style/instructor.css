@@ -1,0 +1,15 @@
+.table td,
+.table th {
+  vertical-align: middle;
+}
+.offcanvas .offcanvas-body {
+  color: var(--muted);
+}
+.badge.text-bg-primary {
+  background: #e8f0ff;
+  color: #1e40af;
+}
+.badge.text-bg-secondary {
+  background: #eef2f7;
+  color: #475569;
+}

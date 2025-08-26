@@ -66,5 +66,12 @@ module.exports = (sequelize, DataTypes) => {
       modelName: 'Course',
     }
   );
+
+  Course.beforeCreate((instance) => {
+    instance.total_duration_minutes = 0;
+    instance.students_count = 0;
+    instance.avg_rating = 0;
+    instance.is_published = false;
+  });
   return Course;
 };
