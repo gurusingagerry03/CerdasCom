@@ -173,9 +173,3 @@
 .progress-bar {
   background-color: #10b981;
 }
-
-@media (max-width: 991.98px) {
-  .sidebar-card {
-    top: 0;
-  }
-}

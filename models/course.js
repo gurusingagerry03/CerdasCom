@@ -47,19 +47,75 @@ module.exports = (sequelize, DataTypes) => {
       Course.belongsTo(models.Category);
     }
   }
+
   Course.init(
     {
-      title: DataTypes.STRING,
-      description: DataTypes.TEXT,
+      title: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+          notEmpty: {
+            msg: 'title:title required',
+          },
+          notNull: {
+            msg: 'title:title required',
+          },
+        },
+      },
+      description: {
+        type: DataTypes.TEXT,
+        allowNull: false,
+        validate: {
+          notEmpty: {
+            msg: 'desc:description required',
+          },
+          notNull: {
+            msg: 'desc:description required',
+          },
+        },
+      },
+
       image: DataTypes.TEXT,
+
       level: DataTypes.STRING,
-      price: DataTypes.INTEGER,
+
+      price: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+          notEmpty: {
+            msg: 'price:price required',
+          },
+          notNull: {
+            msg: 'price:price required',
+          },
+          min: {
+            args: 10000,
+            msg: 'price:price minimal 10000',
+          },
+        },
+      },
+
       avg_rating: DataTypes.DECIMAL,
       total_duration_minutes: DataTypes.INTEGER,
       students_count: DataTypes.INTEGER,
       is_published: DataTypes.BOOLEAN,
-      CategoryId: DataTypes.INTEGER,
-      InstructorId: DataTypes.INTEGER,
+
+      CategoryId: {
+        type: DataTypes.INTEGER,
+        allowNull: false,
+        validate: {
+          notEmpty: {
+            msg: 'category:CategoryId required',
+          },
+          notNull: {
+            msg: 'category:CategoryId required',
+          },
+        },
+      },
+      InstructorId: {
+        type: DataTypes.INTEGER,
+      },
     },
     {
       sequelize,

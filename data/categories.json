@@ -1,13 +1,37 @@
 [
-  { "name": "Development", "icon": "code" },
-  { "name": "Business", "icon": "briefcase" },
-  { "name": "Finance & Accounting", "icon": "dollar-sign" },
-  { "name": "IT & Software", "icon": "cpu" },
-  { "name": "Office Productivity", "icon": "file-text" },
-  { "name": "Personal Development", "icon": "mic" },
-  { "name": "Design", "icon": "pen-tool" },
-  { "name": "Lifestyle", "icon": "heart" },
-  { "name": "Photography & Video", "icon": "camera" },
-  { "name": "Music", "icon": "music" },
-  { "name": "Language Learning", "icon": "globe" }
+  {
+    "id": 1,
+    "name": "Development",
+    "icon": "code",
+    "createdAt": "2025-05-29T13:54:19",
+    "updatedAt": "2025-07-28T13:54:19"
+  },
+  {
+    "id": 2,
+    "name": "Business",
+    "icon": "briefcase",
+    "createdAt": "2025-05-29T13:54:19",
+    "updatedAt": "2025-07-28T13:54:19"
+  },
+  {
+    "id": 3,
+    "name": "IT & Software",
+    "icon": "cpu",
+    "createdAt": "2025-05-29T13:54:19",
+    "updatedAt": "2025-07-28T13:54:19"
+  },
+  {
+    "id": 4,
+    "name": "Design",
+    "icon": "pen-tool",
+    "createdAt": "2025-05-29T13:54:19",
+    "updatedAt": "2025-07-28T13:54:19"
+  },
+  {
+    "id": 5,
+    "name": "Language Learning",
+    "icon": "globe",
+    "createdAt": "2025-05-29T13:54:19",
+    "updatedAt": "2025-07-28T13:54:19"
+  }
 ]

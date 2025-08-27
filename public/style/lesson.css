@@ -23,14 +23,7 @@
   max-height: calc(100vh - 64px);
   overflow: auto;
 }
-@media (max-width: 991.98px) {
-  .ls-sidebar {
-    top: 0;
-    max-height: none;
-  }
-}
 
-/* progress di sidebar */
 .ls-progress {
   height: 8px;
   background: rgba(0, 0, 0, 0.08);
@@ -67,7 +60,6 @@
   opacity: 0.95;
 }
 
-/* back link */
 .ls-back {
   text-decoration: none;
 }
@@ -105,8 +97,6 @@
 .ls-playbtn:hover {
   background: rgba(255, 255, 255, 0.24);
 }
-
-/* resource cards */
 .ls-res .card {
   border: 1px solid rgba(0, 0, 0, 0.06);
 }

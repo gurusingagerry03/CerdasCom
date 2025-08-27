@@ -161,15 +161,3 @@
   display: grid;
   place-items: center;
 }
-
-@media (max-width: 992px) {
-  .control-pill {
-    min-width: 200px;
-  }
-}
-
-@media (max-width: 576px) {
-  .searchbox {
-    max-width: 100%;
-  }
-}

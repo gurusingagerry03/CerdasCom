@@ -87,7 +87,9 @@
               <% } %>
               <% } else if(user.role === 'admin') { %>
               <div class="mb-3" style="height:42px;"></div>
-              <% } %>
+              <% } else if(user.role === 'instructor'){ %>
+              <a href="/instructor" class="btn btn-enroll w-100 mb-3">Dashboard</a>
+              <% }%>
               <% }else{ %>
               <% const msg = `harap login` %>
               <a href="/login/?msg=<%= msg %>" class="btn btn-enroll w-100 mb-3">Enroll Now</a>
