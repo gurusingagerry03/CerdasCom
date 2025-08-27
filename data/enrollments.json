@@ -1,159 +1,802 @@
 [
   {
     "id": 1,
-    "UserId": 1,
-    "CourseId": 1,
-    "status": "active",
-    "last_activity_at": "2025-08-23T03:00:00.000Z",
-    "completed_at": null
+    "UserId": 7,
+    "CourseId": 11,
+    "status": "completed",
+    "last_activity_at": "2025-08-17T14:08:03",
+    "completed_at": "2025-08-17T14:08:03",
+    "createdAt": "2025-06-21T14:08:03",
+    "updatedAt": "2025-08-16T14:08:03"
   },
   {
     "id": 2,
-    "UserId": 2,
-    "CourseId": 1,
-    "status": "completed",
-    "last_activity_at": "2025-08-23T03:10:00.000Z",
-    "completed_at": "2025-08-23T03:10:00.000Z"
+    "UserId": 7,
+    "CourseId": 2,
+    "status": "active",
+    "last_activity_at": "2025-08-17T14:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-11T14:08:03",
+    "updatedAt": "2025-08-21T14:08:03"
   },
   {
     "id": 3,
-    "UserId": 3,
+    "UserId": 7,
     "CourseId": 1,
     "status": "active",
-    "last_activity_at": "2025-08-23T03:15:00.000Z",
-    "completed_at": null
+    "last_activity_at": "2025-08-14T18:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-06T14:08:03",
+    "updatedAt": "2025-08-16T14:08:03"
   },
   {
     "id": 4,
-    "UserId": 4,
-    "CourseId": 1,
+    "UserId": 7,
+    "CourseId": 5,
     "status": "active",
-    "last_activity_at": "2025-08-23T03:20:00.000Z",
-    "completed_at": null
+    "last_activity_at": "2025-08-20T07:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-14T14:08:03",
+    "updatedAt": "2025-08-20T14:08:03"
   },
-
   {
     "id": 5,
-    "UserId": 2,
-    "CourseId": 2,
+    "UserId": 7,
+    "CourseId": 4,
     "status": "active",
-    "last_activity_at": "2025-08-23T03:30:00.000Z",
-    "completed_at": null
+    "last_activity_at": "2025-08-14T14:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-04T14:08:03",
+    "updatedAt": "2025-08-22T14:08:03"
   },
   {
     "id": 6,
-    "UserId": 5,
-    "CourseId": 2,
+    "UserId": 7,
+    "CourseId": 12,
     "status": "completed",
-    "last_activity_at": "2025-08-23T03:40:00.000Z",
-    "completed_at": "2025-08-23T03:40:00.000Z"
+    "last_activity_at": "2025-08-10T14:08:03",
+    "completed_at": "2025-08-10T14:08:03",
+    "createdAt": "2025-06-18T14:08:03",
+    "updatedAt": "2025-08-20T14:08:03"
   },
   {
     "id": 7,
-    "UserId": 6,
-    "CourseId": 2,
-    "status": "active",
-    "last_activity_at": "2025-08-23T03:45:00.000Z",
-    "completed_at": null
+    "UserId": 7,
+    "CourseId": 7,
+    "status": "completed",
+    "last_activity_at": "2025-08-19T14:08:03",
+    "completed_at": "2025-08-19T14:08:03",
+    "createdAt": "2025-06-22T14:08:03",
+    "updatedAt": "2025-08-19T14:08:03"
   },
-
   {
     "id": 8,
-    "UserId": 3,
-    "CourseId": 3,
+    "UserId": 7,
+    "CourseId": 10,
     "status": "completed",
-    "last_activity_at": "2025-08-23T03:50:00.000Z",
-    "completed_at": "2025-08-23T03:50:00.000Z"
+    "last_activity_at": "2025-08-20T14:08:03",
+    "completed_at": "2025-08-20T14:08:03",
+    "createdAt": "2025-06-26T14:08:03",
+    "updatedAt": "2025-08-18T14:08:03"
   },
   {
     "id": 9,
-    "UserId": 4,
-    "CourseId": 3,
+    "UserId": 8,
+    "CourseId": 2,
     "status": "completed",
-    "last_activity_at": "2025-08-23T03:55:00.000Z",
-    "completed_at": "2025-08-23T03:55:00.000Z"
+    "last_activity_at": "2025-08-12T14:08:03",
+    "completed_at": "2025-08-12T14:08:03",
+    "createdAt": "2025-06-10T14:08:03",
+    "updatedAt": "2025-08-21T14:08:03"
   },
-
   {
     "id": 10,
-    "UserId": 1,
-    "CourseId": 4,
+    "UserId": 8,
+    "CourseId": 6,
     "status": "active",
-    "last_activity_at": "2025-08-23T03:05:00.000Z",
-    "completed_at": null
+    "last_activity_at": "2025-08-15T12:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-27T14:08:03",
+    "updatedAt": "2025-08-21T14:08:03"
   },
   {
     "id": 11,
-    "UserId": 5,
-    "CourseId": 4,
+    "UserId": 8,
+    "CourseId": 11,
     "status": "completed",
-    "last_activity_at": "2025-08-23T03:06:00.000Z",
-    "completed_at": "2025-08-23T03:06:00.000Z"
+    "last_activity_at": "2025-08-14T14:08:03",
+    "completed_at": "2025-08-14T14:08:03",
+    "createdAt": "2025-06-26T14:08:03",
+    "updatedAt": "2025-08-21T14:08:03"
   },
   {
     "id": 12,
-    "UserId": 6,
-    "CourseId": 4,
-    "status": "active",
-    "last_activity_at": "2025-08-23T03:07:00.000Z",
-    "completed_at": null
-  },
-
-  {
-    "id": 13,
-    "UserId": 1,
+    "UserId": 8,
     "CourseId": 5,
     "status": "active",
-    "last_activity_at": "2025-08-23T03:10:00.000Z",
-    "completed_at": null
+    "last_activity_at": "2025-08-13T11:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-16T14:08:03",
+    "updatedAt": "2025-08-20T14:08:03"
+  },
+  {
+    "id": 13,
+    "UserId": 8,
+    "CourseId": 1,
+    "status": "completed",
+    "last_activity_at": "2025-08-09T14:08:03",
+    "completed_at": "2025-08-09T14:08:03",
+    "createdAt": "2025-06-08T14:08:03",
+    "updatedAt": "2025-08-19T14:08:03"
   },
   {
     "id": 14,
-    "UserId": 2,
-    "CourseId": 5,
+    "UserId": 8,
+    "CourseId": 10,
     "status": "active",
-    "last_activity_at": "2025-08-23T03:12:00.000Z",
-    "completed_at": null
+    "last_activity_at": "2025-08-24T03:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-17T14:08:03",
+    "updatedAt": "2025-08-21T14:08:03"
   },
   {
     "id": 15,
-    "UserId": 3,
-    "CourseId": 5,
+    "UserId": 8,
+    "CourseId": 4,
     "status": "completed",
-    "last_activity_at": "2025-08-23T03:13:00.000Z",
-    "completed_at": "2025-08-23T03:13:00.000Z"
+    "last_activity_at": "2025-08-15T14:08:03",
+    "completed_at": "2025-08-15T14:08:03",
+    "createdAt": "2025-06-06T14:08:03",
+    "updatedAt": "2025-08-23T14:08:03"
   },
   {
     "id": 16,
-    "UserId": 4,
-    "CourseId": 5,
+    "UserId": 8,
+    "CourseId": 9,
     "status": "active",
-    "last_activity_at": "2025-08-23T03:14:00.000Z",
-    "completed_at": null
+    "last_activity_at": "2025-08-16T18:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-23T14:08:03",
+    "updatedAt": "2025-08-16T14:08:03"
   },
   {
     "id": 17,
-    "UserId": 5,
-    "CourseId": 5,
-    "status": "active",
-    "last_activity_at": "2025-08-23T03:15:00.000Z",
-    "completed_at": null
+    "UserId": 9,
+    "CourseId": 12,
+    "status": "completed",
+    "last_activity_at": "2025-08-22T14:08:03",
+    "completed_at": "2025-08-22T14:08:03",
+    "createdAt": "2025-06-03T14:08:03",
+    "updatedAt": "2025-08-19T14:08:03"
   },
-
   {
     "id": 18,
-    "UserId": 2,
-    "CourseId": 6,
-    "status": "active",
-    "last_activity_at": "2025-08-23T03:18:00.000Z",
-    "completed_at": null
+    "UserId": 9,
+    "CourseId": 4,
+    "status": "completed",
+    "last_activity_at": "2025-08-11T14:08:03",
+    "completed_at": "2025-08-11T14:08:03",
+    "createdAt": "2025-06-20T14:08:03",
+    "updatedAt": "2025-08-23T14:08:03"
   },
   {
     "id": 19,
-    "UserId": 6,
+    "UserId": 9,
+    "CourseId": 3,
+    "status": "active",
+    "last_activity_at": "2025-08-22T20:08:03",
+    "completed_at": null,
+    "createdAt": "2025-05-31T14:08:03",
+    "updatedAt": "2025-08-19T14:08:03"
+  },
+  {
+    "id": 20,
+    "UserId": 9,
+    "CourseId": 8,
+    "status": "active",
+    "last_activity_at": "2025-08-22T18:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-13T14:08:03",
+    "updatedAt": "2025-08-18T14:08:03"
+  },
+  {
+    "id": 21,
+    "UserId": 9,
+    "CourseId": 7,
+    "status": "active",
+    "last_activity_at": "2025-08-11T18:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-14T14:08:03",
+    "updatedAt": "2025-08-22T14:08:03"
+  },
+  {
+    "id": 22,
+    "UserId": 9,
+    "CourseId": 10,
+    "status": "completed",
+    "last_activity_at": "2025-08-15T14:08:03",
+    "completed_at": "2025-08-15T14:08:03",
+    "createdAt": "2025-06-24T14:08:03",
+    "updatedAt": "2025-08-21T14:08:03"
+  },
+  {
+    "id": 23,
+    "UserId": 9,
+    "CourseId": 6,
+    "status": "completed",
+    "last_activity_at": "2025-08-15T14:08:03",
+    "completed_at": "2025-08-15T14:08:03",
+    "createdAt": "2025-06-05T14:08:03",
+    "updatedAt": "2025-08-18T14:08:03"
+  },
+  {
+    "id": 24,
+    "UserId": 9,
+    "CourseId": 5,
+    "status": "active",
+    "last_activity_at": "2025-08-11T20:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-16T14:08:03",
+    "updatedAt": "2025-08-19T14:08:03"
+  },
+  {
+    "id": 25,
+    "UserId": 10,
+    "CourseId": 4,
+    "status": "active",
+    "last_activity_at": "2025-08-17T12:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-16T14:08:03",
+    "updatedAt": "2025-08-18T14:08:03"
+  },
+  {
+    "id": 26,
+    "UserId": 10,
+    "CourseId": 3,
+    "status": "active",
+    "last_activity_at": "2025-08-17T00:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-12T14:08:03",
+    "updatedAt": "2025-08-20T14:08:03"
+  },
+  {
+    "id": 27,
+    "UserId": 10,
+    "CourseId": 9,
+    "status": "completed",
+    "last_activity_at": "2025-08-23T14:08:03",
+    "completed_at": "2025-08-23T14:08:03",
+    "createdAt": "2025-06-07T14:08:03",
+    "updatedAt": "2025-08-23T14:08:03"
+  },
+  {
+    "id": 28,
+    "UserId": 10,
+    "CourseId": 8,
+    "status": "completed",
+    "last_activity_at": "2025-08-15T14:08:03",
+    "completed_at": "2025-08-15T14:08:03",
+    "createdAt": "2025-06-04T14:08:03",
+    "updatedAt": "2025-08-19T14:08:03"
+  },
+  {
+    "id": 29,
+    "UserId": 10,
+    "CourseId": 2,
+    "status": "active",
+    "last_activity_at": "2025-08-25T05:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-15T14:08:03",
+    "updatedAt": "2025-08-22T14:08:03"
+  },
+  {
+    "id": 30,
+    "UserId": 10,
+    "CourseId": 7,
+    "status": "completed",
+    "last_activity_at": "2025-08-09T14:08:03",
+    "completed_at": "2025-08-09T14:08:03",
+    "createdAt": "2025-06-28T14:08:03",
+    "updatedAt": "2025-08-20T14:08:03"
+  },
+  {
+    "id": 31,
+    "UserId": 10,
+    "CourseId": 1,
+    "status": "completed",
+    "last_activity_at": "2025-08-07T14:08:03",
+    "completed_at": "2025-08-07T14:08:03",
+    "createdAt": "2025-06-04T14:08:03",
+    "updatedAt": "2025-08-22T14:08:03"
+  },
+  {
+    "id": 32,
+    "UserId": 10,
     "CourseId": 6,
     "status": "active",
-    "last_activity_at": "2025-08-23T03:19:00.000Z",
-    "completed_at": null
+    "last_activity_at": "2025-08-18T11:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-01T14:08:03",
+    "updatedAt": "2025-08-20T14:08:03"
+  },
+  {
+    "id": 33,
+    "UserId": 11,
+    "CourseId": 11,
+    "status": "completed",
+    "last_activity_at": "2025-08-12T14:08:03",
+    "completed_at": "2025-08-12T14:08:03",
+    "createdAt": "2025-05-31T14:08:03",
+    "updatedAt": "2025-08-20T14:08:03"
+  },
+  {
+    "id": 34,
+    "UserId": 11,
+    "CourseId": 9,
+    "status": "active",
+    "last_activity_at": "2025-08-23T13:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-21T14:08:03",
+    "updatedAt": "2025-08-23T14:08:03"
+  },
+  {
+    "id": 35,
+    "UserId": 11,
+    "CourseId": 10,
+    "status": "active",
+    "last_activity_at": "2025-08-24T23:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-02T14:08:03",
+    "updatedAt": "2025-08-23T14:08:03"
+  },
+  {
+    "id": 36,
+    "UserId": 11,
+    "CourseId": 4,
+    "status": "completed",
+    "last_activity_at": "2025-08-19T14:08:03",
+    "completed_at": "2025-08-19T14:08:03",
+    "createdAt": "2025-06-24T14:08:03",
+    "updatedAt": "2025-08-17T14:08:03"
+  },
+  {
+    "id": 37,
+    "UserId": 11,
+    "CourseId": 3,
+    "status": "active",
+    "last_activity_at": "2025-08-18T09:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-20T14:08:03",
+    "updatedAt": "2025-08-16T14:08:03"
+  },
+  {
+    "id": 38,
+    "UserId": 11,
+    "CourseId": 8,
+    "status": "completed",
+    "last_activity_at": "2025-08-10T14:08:03",
+    "completed_at": "2025-08-10T14:08:03",
+    "createdAt": "2025-05-29T14:08:03",
+    "updatedAt": "2025-08-21T14:08:03"
+  },
+  {
+    "id": 39,
+    "UserId": 11,
+    "CourseId": 2,
+    "status": "active",
+    "last_activity_at": "2025-08-11T21:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-04T14:08:03",
+    "updatedAt": "2025-08-21T14:08:03"
+  },
+  {
+    "id": 40,
+    "UserId": 11,
+    "CourseId": 5,
+    "status": "completed",
+    "last_activity_at": "2025-08-14T14:08:03",
+    "completed_at": "2025-08-14T14:08:03",
+    "createdAt": "2025-06-16T14:08:03",
+    "updatedAt": "2025-08-19T14:08:03"
+  },
+  {
+    "id": 41,
+    "UserId": 12,
+    "CourseId": 8,
+    "status": "completed",
+    "last_activity_at": "2025-08-21T14:08:03",
+    "completed_at": "2025-08-21T14:08:03",
+    "createdAt": "2025-06-06T14:08:03",
+    "updatedAt": "2025-08-24T14:08:03"
+  },
+  {
+    "id": 42,
+    "UserId": 12,
+    "CourseId": 9,
+    "status": "completed",
+    "last_activity_at": "2025-08-16T14:08:03",
+    "completed_at": "2025-08-16T14:08:03",
+    "createdAt": "2025-06-26T14:08:03",
+    "updatedAt": "2025-08-24T14:08:03"
+  },
+  {
+    "id": 43,
+    "UserId": 12,
+    "CourseId": 12,
+    "status": "active",
+    "last_activity_at": "2025-08-13T04:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-26T14:08:03",
+    "updatedAt": "2025-08-16T14:08:03"
+  },
+  {
+    "id": 44,
+    "UserId": 12,
+    "CourseId": 2,
+    "status": "completed",
+    "last_activity_at": "2025-08-16T14:08:03",
+    "completed_at": "2025-08-16T14:08:03",
+    "createdAt": "2025-06-20T14:08:03",
+    "updatedAt": "2025-08-17T14:08:03"
+  },
+  {
+    "id": 45,
+    "UserId": 12,
+    "CourseId": 4,
+    "status": "completed",
+    "last_activity_at": "2025-08-17T14:08:03",
+    "completed_at": "2025-08-17T14:08:03",
+    "createdAt": "2025-06-11T14:08:03",
+    "updatedAt": "2025-08-22T14:08:03"
+  },
+  {
+    "id": 46,
+    "UserId": 12,
+    "CourseId": 11,
+    "status": "active",
+    "last_activity_at": "2025-08-14T20:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-10T14:08:03",
+    "updatedAt": "2025-08-17T14:08:03"
+  },
+  {
+    "id": 47,
+    "UserId": 12,
+    "CourseId": 1,
+    "status": "active",
+    "last_activity_at": "2025-08-22T23:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-03T14:08:03",
+    "updatedAt": "2025-08-18T14:08:03"
+  },
+  {
+    "id": 48,
+    "UserId": 12,
+    "CourseId": 3,
+    "status": "active",
+    "last_activity_at": "2025-08-23T11:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-25T14:08:03",
+    "updatedAt": "2025-08-18T14:08:03"
+  },
+  {
+    "id": 49,
+    "UserId": 13,
+    "CourseId": 6,
+    "status": "completed",
+    "last_activity_at": "2025-08-16T14:08:03",
+    "completed_at": "2025-08-16T14:08:03",
+    "createdAt": "2025-06-22T14:08:03",
+    "updatedAt": "2025-08-21T14:08:03"
+  },
+  {
+    "id": 50,
+    "UserId": 13,
+    "CourseId": 7,
+    "status": "active",
+    "last_activity_at": "2025-08-18T00:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-24T14:08:03",
+    "updatedAt": "2025-08-18T14:08:03"
+  },
+  {
+    "id": 51,
+    "UserId": 13,
+    "CourseId": 11,
+    "status": "completed",
+    "last_activity_at": "2025-08-18T14:08:03",
+    "completed_at": "2025-08-18T14:08:03",
+    "createdAt": "2025-06-20T14:08:03",
+    "updatedAt": "2025-08-17T14:08:03"
+  },
+  {
+    "id": 52,
+    "UserId": 13,
+    "CourseId": 8,
+    "status": "active",
+    "last_activity_at": "2025-08-23T12:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-14T14:08:03",
+    "updatedAt": "2025-08-16T14:08:03"
+  },
+  {
+    "id": 53,
+    "UserId": 13,
+    "CourseId": 1,
+    "status": "active",
+    "last_activity_at": "2025-08-25T13:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-08T14:08:03",
+    "updatedAt": "2025-08-16T14:08:03"
+  },
+  {
+    "id": 54,
+    "UserId": 13,
+    "CourseId": 12,
+    "status": "completed",
+    "last_activity_at": "2025-08-23T14:08:03",
+    "completed_at": "2025-08-23T14:08:03",
+    "createdAt": "2025-06-26T14:08:03",
+    "updatedAt": "2025-08-21T14:08:03"
+  },
+  {
+    "id": 55,
+    "UserId": 13,
+    "CourseId": 10,
+    "status": "completed",
+    "last_activity_at": "2025-08-18T14:08:03",
+    "completed_at": "2025-08-18T14:08:03",
+    "createdAt": "2025-06-15T14:08:03",
+    "updatedAt": "2025-08-17T14:08:03"
+  },
+  {
+    "id": 56,
+    "UserId": 13,
+    "CourseId": 9,
+    "status": "active",
+    "last_activity_at": "2025-08-19T08:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-01T14:08:03",
+    "updatedAt": "2025-08-18T14:08:03"
+  },
+  {
+    "id": 57,
+    "UserId": 14,
+    "CourseId": 1,
+    "status": "active",
+    "last_activity_at": "2025-08-25T20:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-05T14:08:03",
+    "updatedAt": "2025-08-16T14:08:03"
+  },
+  {
+    "id": 58,
+    "UserId": 14,
+    "CourseId": 3,
+    "status": "completed",
+    "last_activity_at": "2025-08-22T14:08:03",
+    "completed_at": "2025-08-22T14:08:03",
+    "createdAt": "2025-06-05T14:08:03",
+    "updatedAt": "2025-08-19T14:08:03"
+  },
+  {
+    "id": 59,
+    "UserId": 14,
+    "CourseId": 7,
+    "status": "completed",
+    "last_activity_at": "2025-08-22T14:08:03",
+    "completed_at": "2025-08-22T14:08:03",
+    "createdAt": "2025-06-27T14:08:03",
+    "updatedAt": "2025-08-17T14:08:03"
+  },
+  {
+    "id": 60,
+    "UserId": 14,
+    "CourseId": 12,
+    "status": "active",
+    "last_activity_at": "2025-08-17T22:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-23T14:08:03",
+    "updatedAt": "2025-08-24T14:08:03"
+  },
+  {
+    "id": 61,
+    "UserId": 14,
+    "CourseId": 10,
+    "status": "active",
+    "last_activity_at": "2025-08-18T12:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-01T14:08:03",
+    "updatedAt": "2025-08-22T14:08:03"
+  },
+  {
+    "id": 62,
+    "UserId": 14,
+    "CourseId": 11,
+    "status": "completed",
+    "last_activity_at": "2025-08-21T14:08:03",
+    "completed_at": "2025-08-21T14:08:03",
+    "createdAt": "2025-06-09T14:08:03",
+    "updatedAt": "2025-08-23T14:08:03"
+  },
+  {
+    "id": 63,
+    "UserId": 14,
+    "CourseId": 4,
+    "status": "completed",
+    "last_activity_at": "2025-08-16T14:08:03",
+    "completed_at": "2025-08-16T14:08:03",
+    "createdAt": "2025-06-16T14:08:03",
+    "updatedAt": "2025-08-23T14:08:03"
+  },
+  {
+    "id": 64,
+    "UserId": 14,
+    "CourseId": 8,
+    "status": "completed",
+    "last_activity_at": "2025-08-16T14:08:03",
+    "completed_at": "2025-08-16T14:08:03",
+    "createdAt": "2025-06-10T14:08:03",
+    "updatedAt": "2025-08-24T14:08:03"
+  },
+  {
+    "id": 65,
+    "UserId": 15,
+    "CourseId": 10,
+    "status": "active",
+    "last_activity_at": "2025-08-19T04:08:03",
+    "completed_at": null,
+    "createdAt": "2025-05-30T14:08:03",
+    "updatedAt": "2025-08-23T14:08:03"
+  },
+  {
+    "id": 66,
+    "UserId": 15,
+    "CourseId": 2,
+    "status": "completed",
+    "last_activity_at": "2025-08-23T14:08:03",
+    "completed_at": "2025-08-23T14:08:03",
+    "createdAt": "2025-06-14T14:08:03",
+    "updatedAt": "2025-08-23T14:08:03"
+  },
+  {
+    "id": 67,
+    "UserId": 15,
+    "CourseId": 7,
+    "status": "completed",
+    "last_activity_at": "2025-08-21T14:08:03",
+    "completed_at": "2025-08-21T14:08:03",
+    "createdAt": "2025-06-11T14:08:03",
+    "updatedAt": "2025-08-21T14:08:03"
+  },
+  {
+    "id": 68,
+    "UserId": 15,
+    "CourseId": 9,
+    "status": "completed",
+    "last_activity_at": "2025-08-07T14:08:03",
+    "completed_at": "2025-08-07T14:08:03",
+    "createdAt": "2025-06-20T14:08:03",
+    "updatedAt": "2025-08-22T14:08:03"
+  },
+  {
+    "id": 69,
+    "UserId": 15,
+    "CourseId": 6,
+    "status": "completed",
+    "last_activity_at": "2025-08-12T14:08:03",
+    "completed_at": "2025-08-12T14:08:03",
+    "createdAt": "2025-05-31T14:08:03",
+    "updatedAt": "2025-08-23T14:08:03"
+  },
+  {
+    "id": 70,
+    "UserId": 15,
+    "CourseId": 3,
+    "status": "active",
+    "last_activity_at": "2025-08-12T07:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-17T14:08:03",
+    "updatedAt": "2025-08-20T14:08:03"
+  },
+  {
+    "id": 71,
+    "UserId": 15,
+    "CourseId": 11,
+    "status": "active",
+    "last_activity_at": "2025-08-24T00:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-02T14:08:03",
+    "updatedAt": "2025-08-16T14:08:03"
+  },
+  {
+    "id": 72,
+    "UserId": 15,
+    "CourseId": 12,
+    "status": "active",
+    "last_activity_at": "2025-08-15T05:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-09T14:08:03",
+    "updatedAt": "2025-08-16T14:08:03"
+  },
+  {
+    "id": 73,
+    "UserId": 16,
+    "CourseId": 1,
+    "status": "active",
+    "last_activity_at": "2025-08-23T04:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-22T14:08:03",
+    "updatedAt": "2025-08-20T14:08:03"
+  },
+  {
+    "id": 74,
+    "UserId": 16,
+    "CourseId": 11,
+    "status": "active",
+    "last_activity_at": "2025-08-17T23:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-20T14:08:03",
+    "updatedAt": "2025-08-24T14:08:03"
+  },
+  {
+    "id": 75,
+    "UserId": 16,
+    "CourseId": 9,
+    "status": "completed",
+    "last_activity_at": "2025-08-21T14:08:03",
+    "completed_at": "2025-08-21T14:08:03",
+    "createdAt": "2025-06-08T14:08:03",
+    "updatedAt": "2025-08-18T14:08:03"
+  },
+  {
+    "id": 76,
+    "UserId": 16,
+    "CourseId": 5,
+    "status": "active",
+    "last_activity_at": "2025-08-13T06:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-27T14:08:03",
+    "updatedAt": "2025-08-24T14:08:03"
+  },
+  {
+    "id": 77,
+    "UserId": 16,
+    "CourseId": 2,
+    "status": "completed",
+    "last_activity_at": "2025-08-13T14:08:03",
+    "completed_at": "2025-08-13T14:08:03",
+    "createdAt": "2025-06-04T14:08:03",
+    "updatedAt": "2025-08-22T14:08:03"
+  },
+  {
+    "id": 78,
+    "UserId": 16,
+    "CourseId": 8,
+    "status": "active",
+    "last_activity_at": "2025-08-16T06:08:03",
+    "completed_at": null,
+    "createdAt": "2025-06-23T14:08:03",
+    "updatedAt": "2025-08-17T14:08:03"
+  },
+  {
+    "id": 79,
+    "UserId": 16,
+    "CourseId": 3,
+    "status": "completed",
+    "last_activity_at": "2025-08-10T14:08:03",
+    "completed_at": "2025-08-10T14:08:03",
+    "createdAt": "2025-06-11T14:08:03",
+    "updatedAt": "2025-08-24T14:08:03"
+  },
+  {
+    "id": 80,
+    "UserId": 16,
+    "CourseId": 12,
+    "status": "completed",
+    "last_activity_at": "2025-08-20T14:08:03",
+    "completed_at": "2025-08-20T14:08:03",
+    "createdAt": "2025-06-26T14:08:03",
+    "updatedAt": "2025-08-22T14:08:03"
   }
 ]

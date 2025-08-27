@@ -1,82 +1,162 @@
 [
   {
     "id": 1,
-    "username": "alice",
-    "email": "alice@example.com",
-    "password": "hash1",
-    "full_name": "Alice Pratama",
-    "role": "student"
+    "username": "admin",
+    "email": "admin@cerdas.com",
+    "password": "123",
+    "full_name": "Admin",
+    "role": "admin",
+    "createdAt": "2025-04-29T13:54:19",
+    "updatedAt": "2025-07-28T13:54:19"
   },
   {
     "id": 2,
-    "username": "bob",
-    "email": "bob@example.com",
-    "password": "hash2",
-    "full_name": "Bob Santoso",
-    "role": "student"
+    "username": "instructor02",
+    "email": "instructor02@cerdas.com",
+    "password": "123",
+    "full_name": "Instructor 02",
+    "role": "instructor",
+    "createdAt": "2025-05-19T13:54:19",
+    "updatedAt": "2025-08-02T13:54:19"
   },
   {
     "id": 3,
-    "username": "carol",
-    "email": "carol@example.com",
-    "password": "hash3",
-    "full_name": "Carol Dewi",
-    "role": "student"
+    "username": "instructor03",
+    "email": "instructor03@cerdas.com",
+    "password": "123",
+    "full_name": "Instructor 03",
+    "role": "instructor",
+    "createdAt": "2025-05-22T13:54:19",
+    "updatedAt": "2025-08-03T13:54:19"
   },
   {
     "id": 4,
-    "username": "dave",
-    "email": "dave@example.com",
-    "password": "hash4",
-    "full_name": "Dave Putra",
-    "role": "student"
+    "username": "instructor04",
+    "email": "instructor04@cerdas.com",
+    "password": "123",
+    "full_name": "Instructor 04",
+    "role": "instructor",
+    "createdAt": "2025-05-25T13:54:19",
+    "updatedAt": "2025-08-04T13:54:19"
   },
   {
     "id": 5,
-    "username": "erin",
-    "email": "erin@example.com",
-    "password": "hash5",
-    "full_name": "Erin Puspita",
-    "role": "student"
+    "username": "instructor05",
+    "email": "instructor05@cerdas.com",
+    "password": "123",
+    "full_name": "Instructor 05",
+    "role": "instructor",
+    "createdAt": "2025-05-28T13:54:19",
+    "updatedAt": "2025-08-05T13:54:19"
   },
   {
     "id": 6,
-    "username": "frank",
-    "email": "frank@example.com",
-    "password": "hash6",
-    "full_name": "Frank Wijaya",
-    "role": "student"
+    "username": "instructor06",
+    "email": "instructor06@cerdas.com",
+    "password": "123",
+    "full_name": "Instructor 06",
+    "role": "instructor",
+    "createdAt": "2025-05-31T13:54:19",
+    "updatedAt": "2025-08-06T13:54:19"
   },
   {
     "id": 7,
-    "username": "greg",
-    "email": "greg@example.com",
-    "password": "hash7",
-    "full_name": "Gregory Halim",
-    "role": "instructor"
+    "username": "student07",
+    "email": "student07@cerdas.com",
+    "password": "123",
+    "full_name": "Student 07",
+    "role": "student",
+    "createdAt": "2025-07-18T13:54:19",
+    "updatedAt": "2025-08-22T13:54:19"
   },
   {
     "id": 8,
-    "username": "hannah",
-    "email": "hannah@example.com",
-    "password": "hash8",
-    "full_name": "Hannah Siregar",
-    "role": "instructor"
+    "username": "student08",
+    "email": "student08@cerdas.com",
+    "password": "123",
+    "full_name": "Student 08",
+    "role": "student",
+    "createdAt": "2025-07-19T13:54:19",
+    "updatedAt": "2025-08-21T13:54:19"
   },
   {
     "id": 9,
-    "username": "ivan",
-    "email": "ivan@example.com",
-    "password": "hash9",
-    "full_name": "Ivan Prakoso",
-    "role": "instructor"
+    "username": "student09",
+    "email": "student09@cerdas.com",
+    "password": "123",
+    "full_name": "Student 09",
+    "role": "student",
+    "createdAt": "2025-07-20T13:54:19",
+    "updatedAt": "2025-08-20T13:54:19"
   },
   {
     "id": 10,
-    "username": "admin",
-    "email": "admin@gmail.com",
+    "username": "student10",
+    "email": "student10@cerdas.com",
     "password": "123",
-    "full_name": "admin",
-    "role": "admin"
+    "full_name": "Student 10",
+    "role": "student",
+    "createdAt": "2025-07-21T13:54:19",
+    "updatedAt": "2025-08-22T13:54:19"
+  },
+  {
+    "id": 11,
+    "username": "student11",
+    "email": "student11@cerdas.com",
+    "password": "123",
+    "full_name": "Student 11",
+    "role": "student",
+    "createdAt": "2025-07-22T13:54:19",
+    "updatedAt": "2025-08-21T13:54:19"
+  },
+  {
+    "id": 12,
+    "username": "student12",
+    "email": "student12@cerdas.com",
+    "password": "123",
+    "full_name": "Student 12",
+    "role": "student",
+    "createdAt": "2025-07-23T13:54:19",
+    "updatedAt": "2025-08-20T13:54:19"
+  },
+  {
+    "id": 13,
+    "username": "student13",
+    "email": "student13@cerdas.com",
+    "password": "123",
+    "full_name": "Student 13",
+    "role": "student",
+    "createdAt": "2025-07-24T13:54:19",
+    "updatedAt": "2025-08-22T13:54:19"
+  },
+  {
+    "id": 14,
+    "username": "student14",
+    "email": "student14@cerdas.com",
+    "password": "123",
+    "full_name": "Student 14",
+    "role": "student",
+    "createdAt": "2025-07-25T13:54:19",
+    "updatedAt": "2025-08-21T13:54:19"
+  },
+  {
+    "id": 15,
+    "username": "student15",
+    "email": "student15@cerdas.com",
+    "password": "123",
+    "full_name": "Student 15",
+    "role": "student",
+    "createdAt": "2025-07-26T13:54:19",
+    "updatedAt": "2025-08-20T13:54:19"
+  },
+  {
+    "id": 16,
+    "username": "student16",
+    "email": "student16@cerdas.com",
+    "password": "123",
+    "full_name": "Student 16",
+    "role": "student",
+    "createdAt": "2025-07-27T13:54:19",
+    "updatedAt": "2025-08-22T13:54:19"
   }
 ]

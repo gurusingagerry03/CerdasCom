@@ -47,8 +47,10 @@ class Controller {
           };
           if (user.role === 'admin') {
             res.redirect(`/admin`);
-          } else {
+          } else if (user.role === 'student') {
             res.redirect(`/myCourse/${user.id}`);
+          } else if (user.role === 'instructor') {
+            res.redirect(`/instructor`);
           }
         } else {
           throw {
@@ -127,8 +129,6 @@ class Controller {
       });
       res.render('home', { page, course, formatPrice, msg });
     } catch (error) {
-      console.log(error);
-
       res.send(error);
     }
   }
@@ -140,8 +140,6 @@ class Controller {
       let course = await Course.filter(sort, search, category);
       res.render('course', { page, course, formatPrice, sort, search, category });
     } catch (error) {
-      console.log(error);
-
       res.send(error);
     }
   }
@@ -152,8 +150,6 @@ class Controller {
       let categories = await Category.findAll();
       res.render('category', { page, categories });
     } catch (error) {
-      console.log(error);
-
       res.send(error);
     }
   }
@@ -208,8 +204,6 @@ class Controller {
         isEnrolled,
       });
     } catch (error) {
-      console.log(error);
-
       res.send(error);
     }
   }
@@ -296,8 +290,6 @@ class Controller {
         msg,
       });
     } catch (error) {
-      console.log(error);
-
       res.send(error);
     }
   }
@@ -343,8 +335,6 @@ class Controller {
         msg,
       });
     } catch (error) {
-      console.log(error);
-
       res.send(error);
     }
   }
@@ -389,7 +379,6 @@ class Controller {
       const msg = 'review updated';
       res.redirect(`/myCourse/review/${enrollmentId}/?msg=${msg}`);
     } catch (error) {
-      console.log(error);
       res.send(error);
     }
   }
@@ -408,7 +397,6 @@ class Controller {
       const msg = 'review berhasil dihapus';
       res.redirect(`/myCourse/review/${enrollmentId}/?msg=${msg}`);
     } catch (error) {
-      console.log(error);
       res.send(error);
     }
   }
@@ -427,8 +415,6 @@ class Controller {
       let msg = `${course.title} added`;
       res.redirect(`/myCourse/${userId}/?msg=${encodeURIComponent(msg)}`);
     } catch (error) {
-      console.log(error);
-
       res.send(error);
     }
   }
@@ -469,8 +455,6 @@ class Controller {
         toEmbedUrl,
       });
     } catch (error) {
-      console.log(error);
-
       res.send(error);
     }
   }
@@ -484,8 +468,6 @@ class Controller {
       });
       res.redirect(`/myCourse/myLesson/${findLP.EnrollmentId}`);
     } catch (error) {
-      console.log(error);
-
       res.send(error);
     }
   }
@@ -514,7 +496,6 @@ class Controller {
         msg,
       });
     } catch (error) {
-      console.log(error);
       res.send(error);
     }
   }
@@ -534,7 +515,6 @@ class Controller {
       const msg = `${user.full_name} Promoted`;
       res.redirect(`/admin/?msg=${msg}`);
     } catch (error) {
-      console.log(error);
       res.send(error);
     }
   }
@@ -557,7 +537,6 @@ class Controller {
       const msg = `${user.full_name} Demoted`;
       res.redirect(`/admin/?msg=${msg}`);
     } catch (error) {
-      console.log(error);
       res.send(error);
     }
   }
@@ -589,8 +568,6 @@ class Controller {
         topValues,
       });
     } catch (error) {
-      console.log(error);
-
       res.send(error);
     }
   }
@@ -605,7 +582,6 @@ class Controller {
       });
       res.render(`editInstructor`, { page, formatDateToInput, instructor, errors, getError });
     } catch (error) {
-      console.log(error);
       res.send(error);
     }
   }
@@ -657,7 +633,6 @@ class Controller {
         total,
       });
     } catch (error) {
-      console.log(error);
       res.send(error);
     }
   }
@@ -669,29 +644,183 @@ class Controller {
       let page = 'course';
       res.render(`courseList`, { page, courses, msg });
     } catch (error) {
-      console.log(error);
+      res.send(error);
+    }
+  }
+
+  static async listLesson(req, res) {
+    try {
+      const { id, msg } = req.params;
+      let lessons = await Course.findByPk(id, {
+        include: {
+          model: Lesson,
+        },
+        order: [[Lesson, 'section_order', 'ASC']],
+      });
+      let page = 'course';
+      res.render(`lessonList`, { page, lessons, msg });
+    } catch (error) {
       res.send(error);
     }
   }
 
   static async addCourse(req, res) {
     try {
+      let { errors } = req.query;
       let categories = await Category.findAll();
       let instructors = await Instructor.findAll({
         include: User,
       });
       let page = 'course';
-      res.render(`addCourse`, { page, categories, instructors });
+      res.render(`addCourse`, { page, categories, instructors, getError, errors });
     } catch (error) {
-      console.log(error);
       res.send(error);
+    }
+  }
+
+  static async editPostCourse(req, res) {
+    try {
+      const id = req.params.id;
+      const course = await Course.findByPk(id);
+
+      const {
+        title,
+        description,
+        level,
+        price,
+        CategoryId,
+        InstructorId,
+        is_published,
+        old_image,
+      } = req.body;
+
+      let imageName = old_image || null;
+      if (req.file) {
+        imageName = req.file ? `/uploads/${req.file.filename}` : null;
+      }
+
+      await course.update({
+        title,
+        description,
+        level,
+        price: price,
+        CategoryId: CategoryId,
+        InstructorId: InstructorId,
+        is_published: is_published === 'true',
+        image: imageName,
+      });
+
+      return res.redirect('/instructor/courseList');
+    } catch (error) {
+      if (error.name === 'SequelizeValidationError') {
+        let { id } = req.params;
+        error = error.errors.map((el) => el.message);
+        res.redirect(`/instructor/editCourse/${id}/?errors=${error}`);
+      } else {
+        res.send(error);
+      }
+    }
+  }
+
+  static async editCourse(req, res) {
+    try {
+      let { errors } = req.query;
+      let { id } = req.params;
+      let page = 'course';
+      let instructors = await Instructor.findAll({
+        include: User,
+      });
+      let categories = await Category.findAll();
+      let findCourse = await Course.findByPk(id);
+      res.render(`editCourse`, { page, findCourse, instructors, categories, getError, errors });
+    } catch (error) {
+      res.send(error);
+    }
+  }
+
+  static async addLesson(req, res) {
+    try {
+      let { errors } = req.query;
+      let { id } = req.params;
+      let page = 'course';
+      res.render(`addLesson`, { page, id, getError, errors });
+    } catch (error) {
+      res.send(error);
+    }
+  }
+  static async editLesson(req, res) {
+    try {
+      let { errors } = req.query;
+      let { id } = req.params;
+      let page = 'course';
+      let findLesson = await Lesson.findByPk(id, {
+        include: { model: Course, attributes: ['id', 'title'] },
+      });
+      res.render('editLesson', { page, findLesson, getError, errors });
+    } catch (error) {
+      res.send(error);
+    }
+  }
+
+  static async postEditLesson(req, res) {
+    try {
+      let { id } = req.params;
+      const { section_title, title, video_url, duration } = req.body;
+      const lesson = await Lesson.findByPk(id);
+      const payload = {
+        section_title,
+        title,
+        video_url,
+        duration: Number(duration),
+      };
+      if (req.file) {
+        payload.link_materi = req.file.filename;
+      }
+
+      await lesson.update(payload);
+      return res.redirect(`/instructor/lessonList/${lesson.CourseId}`);
+    } catch (error) {
+      let { id } = req.params;
+      if (error.name === 'SequelizeValidationError') {
+        error = error.errors.map((el) => el.message);
+        res.redirect(`/lesson/edit/${id}/?errors=${error}`);
+      } else {
+        res.send(error);
+      }
+    }
+  }
+
+  static async postLesson(req, res) {
+    try {
+      let { id } = req.params;
+      let { section_title, title, video_url, duration } = req.body;
+      const publicPath = req.file ? req.file.filename : null;
+      await Lesson.create({
+        section_title,
+        title,
+        video_url,
+        duration,
+        link_materi: publicPath,
+        CourseId: id,
+      });
+      res.redirect(`/instructor/lessonList/${id}`);
+    } catch (error) {
+      let { id } = req.params;
+      if (error.name === 'SequelizeValidationError') {
+        error = error.errors.map((el) => el.message);
+        res.redirect(`/lesson/add/${id}/?errors=${error}`);
+      } else {
+        res.send(error);
+      }
     }
   }
 
   static async postCourse(req, res) {
     try {
       const { title, description, level, price, CategoryId, InstructorId } = req.body;
-      const publicPath = req.file ? `/uploads/${req.file.filename}` : null;
+      const publicPath = req.file
+        ? `/uploads/${req.file.filename}`
+        : `https://www.eclosio.ong/wp-content/uploads/2018/08/default.png`;
       await Course.create({
         title,
         description,
@@ -699,13 +828,16 @@ class Controller {
         price,
         CategoryId,
         InstructorId,
-
         image: publicPath,
       });
       res.redirect('/instructor/courseList');
     } catch (error) {
-      console.log(error);
-      res.send(error);
+      if (error.name === 'SequelizeValidationError') {
+        error = error.errors.map((el) => el.message);
+        res.redirect(`/instructor/addCourse/?errors=${error}`);
+      } else {
+        res.send(error);
+      }
     }
   }
 
@@ -720,6 +852,57 @@ class Controller {
       res.send(error);
     }
   }
-}
 
+  static async deleteLesson(req, res) {
+    try {
+      const { id } = req.params;
+      let lessonId = +id;
+      const lesson = await Lesson.findByPk(lessonId);
+      const courseId = lesson.CourseId;
+      const sectionOrder = lesson.section_order;
+      await lesson.destroy();
+
+      const lessonsToUpdate = await Lesson.findAll({
+        where: {
+          CourseId: courseId,
+          section_order: { [Op.gt]: sectionOrder },
+        },
+        order: [['section_order', 'ASC']],
+      });
+
+      for (const l of lessonsToUpdate) {
+        await l.update({ section_order: l.section_order - 1 });
+      }
+
+      const totalDuration = (await Lesson.sum('duration', { where: { CourseId: courseId } })) || 0;
+      const totalLessons = await Lesson.count({ where: { CourseId: courseId } });
+
+      await Course.update(
+        {
+          total_duration_minutes: totalDuration,
+          is_published: totalLessons > 0,
+        },
+        { where: { id: courseId } }
+      );
+
+      const enrollments = await Enrollment.findAll({ where: { CourseId: courseId } });
+
+      for (const enroll of enrollments) {
+        const completed = await LessonProgress.count({
+          where: { EnrollmentId: enroll.id, isCompleted: true },
+        });
+
+        if (totalLessons > 0 && completed === totalLessons) {
+          await enroll.update({ status: 'completed', completed_at: new Date() });
+        } else {
+          await enroll.update({ status: 'active', completed_at: null });
+        }
+      }
+
+      res.redirect(`/instructor/lessonList/${courseId}`);
+    } catch (error) {
+      res.send(error);
+    }
+  }
+}
 module.exports = Controller;

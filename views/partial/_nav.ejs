@@ -47,12 +47,13 @@
             <li>
               <a href="/admin/reports" class="dropdown-item"> Reports </a>
             </li>
-            <% }else{ %>
+            <% }else if(user.role === 'student'){ %>
             <li>
               <a class="dropdown-item" href="/myCourse/<%= user.id %>">My Course</a>
             </li>
+            <% }else if(user.role === 'instructor'){ %>
+            <a class="dropdown-item" href="/instructor">Dashboard</a>
             <% } %>
-
             <li>
               <hr class="dropdown-divider" />
             </li>

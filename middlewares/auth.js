@@ -16,6 +16,14 @@ const isAdmin = (req, res, next) => {
   next();
 };
 
+const isInstructor = (req, res, next) => {
+  if (req.session.user.role !== 'instructor') {
+    const msg = `Not Access`;
+    return res.redirect(`/?msg=${msg}`);
+  }
+  next();
+};
+
 const injectUser = async function (req, res, next) {
   try {
     if (req.session.user) {
@@ -33,4 +41,5 @@ module.exports = {
   isLoggedIn,
   injectUser,
   isAdmin,
+  isInstructor,
 };
