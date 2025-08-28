@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
       Review.belongsTo(models.Enrollment, { foreignKey: 'EnrollmentId' });
     }
 
-    static async recomputeCourseAvg(instance) {
+    async recomputeCourseAvg(instance) {
       try {
         const { Enrollment, Course, Review } = sequelize.models;
         let enrol = await Enrollment.findByPk(instance.EnrollmentId);
@@ -76,8 +76,8 @@ module.exports = (sequelize, DataTypes) => {
             msg: 'comment:Komentar tidak boleh kosong',
           },
           minWords(value) {
-            if (value.split(' ').length < 5) {
-              throw new Error('comment:Komentar minimal 5 kata');
+            if (value.split(' ').length < 2) {
+              throw new Error('comment:Komentar minimal 2 kata');
             }
           },
         },
@@ -90,15 +90,15 @@ module.exports = (sequelize, DataTypes) => {
   );
 
   Review.afterCreate(async (review) => {
-    await Review.recomputeCourseAvg(review);
+    await review.recomputeCourseAvg(review);
   });
 
   Review.afterUpdate(async (review) => {
-    await Review.recomputeCourseAvg(review);
+    await review.recomputeCourseAvg(review);
   });
 
   Review.afterDestroy(async (review) => {
-    await Review.recomputeCourseAvg(review);
+    await review.recomputeCourseAvg(review);
   });
 
   return Review;

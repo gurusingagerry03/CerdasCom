@@ -3,9 +3,10 @@ const { Model } = require('sequelize');
 const bcrypt = require('bcryptjs');
 module.exports = (sequelize, DataTypes) => {
   class User extends Model {
-    get firstName() {
+    firstName() {
       return this.full_name.split(' ')[0];
     }
+
     static associate(models) {
       User.hasOne(models.Instructor, { foreignKey: 'UserId' });
       User.hasMany(models.Enrollment, { foreignKey: 'UserId' });
@@ -27,7 +28,7 @@ module.exports = (sequelize, DataTypes) => {
             msg: 'username:userName required',
           },
           len: {
-            args: [1, 10],
+            args: [1, 15],
             msg: 'username:username must be at most 10 characters',
           },
           isOneWord(value) {
