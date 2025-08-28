@@ -129,5 +129,19 @@ module.exports = (sequelize, DataTypes) => {
     instance.avg_rating = 0;
     instance.is_published = false;
   });
+
+  Course.afterUpdate(async (instance) => {
+    const { Lesson } = instance.sequelize.models;
+
+    const lesson = await Lesson.findAll({
+      where: {
+        CourseId: instance.id,
+      },
+    });
+
+    if (lesson.length === 0) {
+      await instance.update({ is_published: false }, { hooks: false });
+    }
+  });
   return Course;
 };

@@ -717,6 +717,8 @@ class Controller {
         error = error.errors.map((el) => el.message);
         res.redirect(`/instructor/editCourse/${id}/?errors=${error}`);
       } else {
+        console.log(error);
+
         res.send(error);
       }
     }
